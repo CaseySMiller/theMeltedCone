@@ -6,7 +6,7 @@ const reviewsSchema = new Schema({
     type: String,
     required: 'You must provide a review text.',
     minlength: 1,
-    maxlengh: 280,
+    maxlength: 280,
     trim: true,
   },
   reviewAuthor: {
