@@ -1,0 +1,20 @@
+[
+  {
+    "flavor": "Chocolate",
+    "toppings": "nuts",
+    "sizes": "small",
+    "category": "Ice cream"
+  },
+  {
+    "flavor": "Strawberry",
+    "toppings": "sprinkles",
+    "sizes": "medium",
+    "category": "Ice cream"
+  },
+  {
+    "flavor": "Vanilla",
+    "toppings": "fudge",
+    "sizes": "large",
+    "category": "Ice cream"
+  }
+]
