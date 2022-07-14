@@ -18,7 +18,7 @@ const productSchema = new Schema({
   category: {
     type: String,
     required: true,
-    trime: true,
+    trim: true,
   },
   reviews: [reviewsSchema],
 });
