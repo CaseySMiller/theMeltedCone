@@ -1,0 +1,13 @@
+import React from "react";
+// import "../style.css";
+import image from "../assets/images/logo.png";
+
+export default function Header() {
+  return (
+    <div>
+      <a href="/">
+        <img style={{ height: "6rem" }} id="logo" src={image} alt="logo" />
+      </a>
+    </div>
+  );
+}
