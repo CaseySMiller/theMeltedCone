@@ -5,7 +5,7 @@ import Header from "./components/header";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 
-// import Home from "./pages/Home";
+import Home from "./pages/Home";
 // import Login from "./pages/Login";
 // import Signup from "./pages/Signup";
 // import About from "./pages/Aboutus";
@@ -21,15 +21,14 @@ export default function App() {
         <Navbar />
         <div>
           <Routes>
-            {/* <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Home />} />
+            {/* <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/about" element={<Aboutus />} />
             <Route path="/order" element={<Order />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/subscribe" element={<Subscribe />} /> */}
           </Routes>
-          {/* <Home /> */}
           <Footer />
         </div>
       </div>
