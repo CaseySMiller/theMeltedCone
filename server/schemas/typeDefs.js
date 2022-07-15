@@ -6,17 +6,36 @@ type User {
     username: String
     email: String
     password: String
-    products: [Product]!
+    orders: [Order]
     reviews: [Review]
+}
+
+type Category {
+    _id: ID
+    name: String
 }
 
 type Product {
     _id: ID
     flavor: String
     toppings: String
-    sizes: String
-    category: String
+    description: String
+    image: String
+    quantity: Int
+    price: Float
+    size: String
+    category: Category
     }
+
+type: Order {
+    _id: ID
+    purchaseDate: String
+    products: [Product]
+}
+
+type Checkout {
+    session: ID
+}
 
 type Review {
     _id: ID
@@ -38,19 +57,26 @@ type Auth {
     }
 
 type Query {
-    users: [User]
-    user:(username: String!): User
-    products: [Product]
-    product(productId:)
+    categories: [Category]
+    products(category: ID, name: String): [Product]
+    product(_id: ID!): Product
+    user: User
+    order(_id: ID!): Order
+    checkout(prducts: [ID]!): Checkout
     }
 
 type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
+    addOrder(prducts: [ID]!): Order
     addReview(userId: ID!, productId: ID!, reviewAuthor: String reviewText: String!): User
     addComment(reviewId: ID!, commentText: String!): Review
+    updatedUser(username: String, email: String, password: String): User
+    updateProduct(_id: ID!, quantity: Int!): Product
+    login(email: String!, password: String!): Auth
     removeReview(reviewId: String!): User
     removeComment(reviewId: ID!, commentId: ID!): Review
     }`;
 
 module.exports = typeDefs;
+
+// users: [User];
