@@ -8,10 +8,12 @@ import Footer from "./components/footer";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import About from "./pages/About";
+import About from "./pages/Aboutus";
 import Order from "./pages/Order";
 import Contact from "./pages/Contact";
 import Subscribe from "./pages/Subscribe";
+import Cart from "./pages/Cart";
+
 
 export default function App() {
   return (
@@ -19,8 +21,10 @@ export default function App() {
       <div>
         <Header />
         <Navbar />
+        <Home />
         <div>
           <Routes>
+
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
