@@ -7,9 +7,12 @@ const styles = {
     backgroundColor: "#FFD6E8",
   },
   img: {
+    // position: "relative",
     height: "35rem",
     width: "35rem",
-    class: "center",
+    // backgroundImage: `url(${Image})`,
+    // backgroundRepeat: "no-repeat",
+    // textAlign: "center",
   },
   quote: {
     color: "white",
@@ -34,15 +37,19 @@ const styles = {
 };
 export default function Home() {
   return (
-    <div>
-      <div className="d-flex flex-column text-center" style={styles.container}>
+    <div className="row">
+      <div
+        className="d-flex flex-column align-items-center"
+        style={styles.container}
+      >
+        {/* <div style={styles.img}>i love ice cream</div> */}
         <img
           src={Image}
           id="main-img"
           alt="main-img"
           style={styles.img}
           className="d-flex justify-content-center"
-        ></img>
+        />
         <h3 style={styles.quote} className="p-5 align-items-center">
           " No need to pick <span style={styles.span}>flavorites </span>when it
           comes to ice cream,{" "}
