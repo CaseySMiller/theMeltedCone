@@ -37,7 +37,7 @@ export default function Navbar() {
         </li>
         <li>
           {" "}
-          <Link style={styles.navbar} to="/subsribe">
+          <Link style={styles.navbar} to="/subscribe">
             {" "}
             SUBSCRIBE{" "}
           </Link>{" "}
