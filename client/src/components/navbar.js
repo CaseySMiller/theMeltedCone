@@ -11,6 +11,7 @@ const styles = {
     listStyle: "none",
     fontFamily: "Syncopate",
     fontDisplay: "sans-serif",
+    display: "inline-block",
   },
   cart: {
     height: "1.5rem",
