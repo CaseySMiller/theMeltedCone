@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 // import Order from "./pages/Order";
 // import Contact from "./pages/Contact";
 // import Subscribe from "./pages/Subscribe";
+// import Cart from "./pages/Cart";
 
 export default function App() {
   return (
@@ -19,12 +20,13 @@ export default function App() {
       <div>
         <Header />
         <Navbar />
+        <Home />
         <div>
           <Routes>
-            <Route path="/" element={<Home />} />
+            {/* <Route path="/" element={<Home />} /> */}
             {/* <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/about" element={<Aboutus />} />
+            <Route path="/signup" element={<Signup />} /> */}
+            {/* <Route path="/about" element={<Aboutus />} />
             <Route path="/order" element={<Order />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/subscribe" element={<Subscribe />} /> */}
