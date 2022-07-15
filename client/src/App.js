@@ -12,8 +12,7 @@ import About from "./pages/Aboutus";
 import Order from "./pages/Order";
 import Contact from "./pages/Contact";
 import Subscribe from "./pages/Subscribe";
-import Cart from "./pages/Cart";
-
+// import Cart from "./pages/Cart";
 
 export default function App() {
   return (
@@ -24,7 +23,6 @@ export default function App() {
         <Home />
         <div>
           <Routes>
-
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
