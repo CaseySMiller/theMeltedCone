@@ -3,18 +3,25 @@
     "flavor": "Chocolate",
     "toppings": "nuts",
     "sizes": "small",
-    "category": "Ice cream"
+    
+    "price": "2.50",
+    "size": "small"
+
   },
   {
     "flavor": "Strawberry",
     "toppings": "sprinkles",
     "sizes": "medium",
-    "category": "Ice cream"
+
+    "price": "4.75",
+    "size": "medium"
   },
   {
     "flavor": "Vanilla",
     "toppings": "fudge",
     "sizes": "large",
-    "category": "Ice cream"
+
+    "price": "7.25",
+    "size": "large"
   }
 ]

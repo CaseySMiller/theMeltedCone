@@ -1,10 +1,6 @@
 const { gql } = require("apollo-server-express");
 
-<<<<<<< HEAD
-const typeDefs = gl`
-=======
 const typeDefs = gql`
->>>>>>> 9dde9779463eb8cbc0af1987895bacc9388ac3c8
   type User {
     _id: ID
     username: String
