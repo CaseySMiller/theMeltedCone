@@ -1,6 +1,10 @@
-const { gpl } = require("apollo-server-express");
+const { gql } = require("apollo-server-express");
 
+<<<<<<< HEAD
 const typeDefs = gl`
+=======
+const typeDefs = gql`
+>>>>>>> 9dde9779463eb8cbc0af1987895bacc9388ac3c8
   type User {
     _id: ID
     username: String
@@ -75,7 +79,7 @@ const typeDefs = gl`
       reviewText: String!
     ): User
     addComment(reviewId: ID!, commentText: String!): Review
-    updatedUser(username: String, email: String, password: String): User
+    updateUser(username: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
     removeReview(reviewId: String!): User
