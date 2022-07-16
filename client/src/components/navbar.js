@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <nav id="nav-bar" className="w-100 mt-auto p-3" style={styles.navbar}>
       <ul style={styles.navbar}>
-        <li>
+        <li id="about">
           {" "}
           <Link style={styles.navbar} to="/about">
             {" "}
@@ -32,40 +32,40 @@ export default function Navbar() {
         </li>
         <li>
           {" "}
-          <Link style={styles.navbar} to="/order">
+          <Link style={styles.navbar} to="/order" id="order">
             {" "}
             ORDER{" "}
           </Link>{" "}
         </li>
         <li>
           {" "}
-          <Link style={styles.navbar} to="/contact">
+          <Link style={styles.navbar} to="/contact" id="contact">
             {" "}
             CONTACT{" "}
           </Link>{" "}
         </li>
         <li>
           {" "}
-          <Link style={styles.navbar} to="/subscribe">
+          <Link style={styles.navbar} to="/subscribe" id="subscribe">
             {" "}
             SUBSCRIBE{" "}
           </Link>{" "}
         </li>
         <li>
           {" "}
-          <Link style={styles.navbar} to="/Login">
+          <Link style={styles.navbar} to="/Login" id="login">
             {" "}
             LOG IN{" "}
           </Link>{" "}
         </li>
         <li>
           {" "}
-          <Link style={styles.navbar} to="/Signup">
+          <Link style={styles.navbar} to="/Signup" id="signup">
             {" "}
             SIGN UP{" "}
           </Link>{" "}
         </li>{" "}
-        <Link style={styles.navbar} to="/Cart">
+        <Link style={styles.navbar} to="/Cart" id="cart">
           <img src={Image} style={styles.cart}></img>
         </Link>{" "}
       </ul>
