@@ -1,21 +1,21 @@
 const { gpl } = require("apollo-server-express");
 
-const typeDefs = gpl`
-type User {
+const typeDefs = gl`
+  type User {
     _id: ID
     username: String
     email: String
     password: String
     orders: [Order]
     reviews: [Review]
-}
+  }
 
-type Category {
+  type Category {
     _id: ID
     name: String
-}
+  }
 
-type Product {
+  type Product {
     _id: ID
     flavor: String
     toppings: String
@@ -25,57 +25,63 @@ type Product {
     price: Float
     size: String
     category: Category
-    }
+  }
 
-type: Order {
+  type Order {
     _id: ID
     purchaseDate: String
     products: [Product]
-}
+  }
 
-type Checkout {
+  type Checkout {
     session: ID
-}
+  }
 
-type Review {
+  type Review {
     _id: ID
     reviewText: String
     reviewAuthor: String
     createdAt: String
-    }
+  }
 
-type Comment {
+  type Comment {
     _id: ID
     commentText: String
     commentAuthor: String
     createdAt: String
-    }
+  }
 
-type Auth {
+  type Auth {
     token: ID!
     user: User
-    }
+  }
 
-type Query {
+  type Query {
     categories: [Category]
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
     user: User
     order(_id: ID!): Order
     checkout(prducts: [ID]!): Checkout
-    }
+  }
 
-type Mutation {
+  type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     addOrder(prducts: [ID]!): Order
-    addReview(userId: ID!, productId: ID!, reviewAuthor: String reviewText: String!): User
+    addReview(
+      userId: ID!
+      productId: ID!
+      reviewAuthor: String
+      reviewText: String!
+    ): User
     addComment(reviewId: ID!, commentText: String!): Review
     updatedUser(username: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
     removeReview(reviewId: String!): User
     removeComment(reviewId: ID!, commentId: ID!): Review
-    }`;
+  }
+`;
 
 module.exports = typeDefs;
 
