@@ -26,8 +26,13 @@ const resolvers = {
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate("category");
     },
+    // user: async (parent, { userId }, context) => {
+    //   console.log(context.user);
+    //   return User.findOne({ _id: context.user._id });
+    // },
     user: async (parent, args, context) => {
       if (context.user) {
+        console.log(context.user);
         const user = await User.findById(context.user._id).populate({
           path: "orders.products",
           populate: "category",
@@ -61,7 +66,7 @@ const resolvers = {
 
       for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
-          name: products[i].name,
+          flavor: products[i].flavor,
           description: products[i].description,
           images: [`${url}/images/${products[i].image}`],
         });
@@ -90,10 +95,9 @@ const resolvers = {
     },
   },
   Mutation: {
-    addUser: async (parent, args) => {
-      const user = await User.create(args);
+    addUser: async (parent, { firstName, lastName, email, password }) => {
+      const user = await User.create({ firstName, lastName, email, password });
       const token = signToken(user);
-
       return { token, user };
     },
     addOrder: async (parent, { products }, context) => {

@@ -16,7 +16,14 @@ const styles = {
 };
 function Signup(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
+<<<<<<< HEAD
   const [addUser] = useMutation(ADD_USER);
+=======
+  const [addUser, { error }] = useMutation(ADD_USER);
+  if (error) {
+    console.error(error);
+  }
+>>>>>>> main
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
