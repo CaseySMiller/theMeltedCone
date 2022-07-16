@@ -10,7 +10,10 @@ const styles = {
     fontDisplay: "sans-serif",
     fontWeight: "bold",
   },
-  input: {},
+  back: {
+    color: "#FF007F",
+    textDecoration: "none",
+  },
 };
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -41,7 +44,9 @@ function Login(props) {
     <div className="row login-container" style={styles.login}>
       <div className="d-flex flex-column align-items-center">
         <div className="container my-1">
-          <Link to="/Signup">← Go to Signup</Link>
+          <Link to="/Signup" style={styles.back}>
+            ← Go to Signup
+          </Link>
 
           <h2>Log In</h2>
           <form onSubmit={handleFormSubmit}>
