@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../style.css";
 import { Link } from "react-router-dom";
 import Image from "../assets/images/shopping-cart.png";
+import Auth from "../utils/auth";
+import { QUERY_USER } from '../utils/queries';
+import { useQuery } from '@apollo/client';
+
 
 const styles = {
   navbar: {
@@ -19,7 +23,18 @@ const styles = {
     // filter: "invert(1)",
   },
 };
-export default function Navbar() {
+const Navbar = () => {
+
+  // console.log(Auth.getProfile().data._id)
+  const { loading, data } = useQuery(QUERY_USER);  
+  const [userData, setUserData] = useState({});
+
+  
+  useEffect(() => {
+    const user = data?.user || {};
+      setUserData(user);
+    }, [loading])
+
   return (
     <nav id="nav-bar" className="w-100 mt-auto p-3" style={styles.navbar}>
       <ul style={styles.navbar}>
@@ -53,9 +68,15 @@ export default function Navbar() {
         </li>
         <li>
           {" "}
-          <Link style={styles.navbar} to="/Login" id="login">
+          {/* display login if no user or firstName if logged in */}
+          <Link 
+            style={styles.navbar} 
+            to={userData.email ? "/profile" : "/Login" }
+            id={userData.email ? "profile" : "login"}
+          >
             {" "}
-            LOG IN{" "}
+            {userData.email ? userData.firstName : "LOG IN"}
+            {" "}
           </Link>{" "}
         </li>
         <li>
@@ -72,3 +93,6 @@ export default function Navbar() {
     </nav>
   );
 }
+
+export default Navbar
+
