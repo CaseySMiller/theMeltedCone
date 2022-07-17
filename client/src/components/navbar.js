@@ -3,9 +3,8 @@ import "../style.css";
 import { Link } from "react-router-dom";
 import Image from "../assets/images/shopping-cart.png";
 import Auth from "../utils/auth";
-import { QUERY_USER } from '../utils/queries';
-import { useQuery } from '@apollo/client';
-
+import { QUERY_USER } from "../utils/queries";
+import { useQuery } from "@apollo/client";
 
 const styles = {
   navbar: {
@@ -24,17 +23,19 @@ const styles = {
   },
 };
 const Navbar = () => {
-
   // console.log(Auth.getProfile().data._id)
-  const { loading, data } = useQuery(QUERY_USER);  
+  const { loading, data } = useQuery(QUERY_USER);
   const [userData, setUserData] = useState({});
 
-  
   useEffect(() => {
     const user = data?.user || {};
-      setUserData(user);
-    }, [loading])
-
+    setUserData(user);
+  }, [loading]);
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+  const [show, setShow] = useState(false);
   return (
     <nav id="nav-bar" className="w-100 mt-auto p-3" style={styles.navbar}>
       <ul style={styles.navbar}>
@@ -66,33 +67,50 @@ const Navbar = () => {
             SUBSCRIBE{" "}
           </Link>{" "}
         </li>
-        <li>
-          {" "}
-          {/* display login if no user or firstName if logged in */}
-          <Link 
-            style={styles.navbar} 
-            to={userData.email ? "/profile" : "/Login" }
-            id={userData.email ? "profile" : "login"}
-          >
-            {" "}
-            {userData.email ? userData.firstName : "LOG IN"}
-            {" "}
-          </Link>{" "}
-        </li>
-        <li>
-          {" "}
-          <Link style={styles.navbar} to="/Signup" id="signup">
-            {" "}
-            SIGN UP{" "}
-          </Link>{" "}
-        </li>{" "}
+      </ul>
+      <div>
+        {Auth.loggedIn() ? (
+          <>
+            <Link
+              style={styles.navbar}
+              className="btn bg-light m-1"
+              to="/profile"
+            >
+              {userData.firstName}'s profile
+            </Link>
+
+            <a
+              style={styles.navbar}
+              className="btn bg-light m-1"
+              onClick={logout}
+            >
+              Logout
+            </a>
+          </>
+        ) : (
+          <>
+            <Link
+              style={styles.navbar}
+              className="btn bg-light m-1"
+              to="/Login"
+            >
+              Login
+            </Link>
+            <Link
+              style={styles.navbar}
+              className="btn bg-light m-1"
+              to="/Signup"
+            >
+              Signup
+            </Link>
+          </>
+        )}
         <Link style={styles.navbar} to="/Cart" id="cart">
           <img src={Image} style={styles.cart}></img>
         </Link>{" "}
-      </ul>
+      </div>
     </nav>
   );
-}
+};
 
-export default Navbar
-
+export default Navbar;
