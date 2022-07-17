@@ -9,6 +9,13 @@ const styles = {
   card: {
     maxWidth: "28rem",
   },
+  flavorites: {
+    marginTop: 45,
+    color: "#FF007F",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
+  },
 };
 export default function Order() {
   return (
@@ -21,7 +28,10 @@ export default function Order() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -55,8 +65,12 @@ export default function Order() {
             <h6 class="mb-0">€ 44.00</h6>
           </div>
           <div className="card-body">
-            <a className="card-link">Card link</a>
-            <a className="card-link">Another link</a>
+            <a className="card-link" style={styles.flavorites}>
+              Card link
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              Another link
+            </a>
           </div>
         </div>
       </div>
@@ -68,7 +82,10 @@ export default function Order() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -80,8 +97,12 @@ export default function Order() {
             <li className="list-group-item">A third item</li>
           </ul>
           <div className="card-body">
-            <a className="card-link">Card link</a>
-            <a className="card-link">Another link</a>
+            <a className="card-link" style={styles.flavorites}>
+              Card link
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              Another link
+            </a>
           </div>
         </div>
       </div>
@@ -93,7 +114,10 @@ export default function Order() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -105,8 +129,12 @@ export default function Order() {
             <li className="list-group-item">A third item</li>
           </ul>
           <div className="card-body">
-            <a className="card-link">Card link</a>
-            <a className="card-link">Another link</a>
+            <a className="card-link" style={styles.flavorites}>
+              Card link
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              Another link
+            </a>
           </div>
         </div>
       </div>
@@ -118,7 +146,10 @@ export default function Order() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -130,8 +161,12 @@ export default function Order() {
             <li className="list-group-item">A third item</li>
           </ul>
           <div className="card-body">
-            <a className="card-link">Card link</a>
-            <a className="card-link">Another link</a>
+            <a className="card-link" style={styles.flavorites}>
+              Card link
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              Another link
+            </a>
           </div>
         </div>
       </div>
@@ -143,7 +178,10 @@ export default function Order() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -155,8 +193,12 @@ export default function Order() {
             <li className="list-group-item">A third item</li>
           </ul>
           <div className="card-body">
-            <a className="card-link">Card link</a>
-            <a className="card-link">Another link</a>
+            <a className="card-link" style={styles.flavorites}>
+              Card link
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              Another link
+            </a>
           </div>
         </div>
       </div>
@@ -168,7 +210,10 @@ export default function Order() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -180,8 +225,12 @@ export default function Order() {
             <li className="list-group-item">A third item</li>
           </ul>
           <div className="card-body">
-            <a className="card-link">Card link</a>
-            <a className="card-link">Another link</a>
+            <a className="card-link" style={styles.flavorites}>
+              Card link
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              Another link
+            </a>
           </div>
         </div>
       </div>
