@@ -3,7 +3,6 @@ import React from "react";
 import Image from "../assets/images/main-pg-image.png";
 import { Link } from "react-router-dom";
 
-
 const styles = {
   container: {
     backgroundColor: "#FFD6E8",
@@ -55,7 +54,7 @@ export default function Home() {
         <h3 style={styles.quote} className="p-5 align-items-center">
           " No need to pick <span style={styles.span}>flavorites </span>when it
           comes to ice cream,{" "}
-          <Link style={styles.btn} to="/subsribe" className="btn-lg bg-white">
+          <Link style={styles.btn} to="/subscribe" className="btn-lg bg-white">
             {" "}
             SUBSCRIBE
           </Link>{" "}
