@@ -2,6 +2,15 @@ import React from "react";
 import Image from "../assets/images/scoop.png";
 // import "../style.css";
 const styles = {
+  container: {
+    backgroundColor: "#FFD6E8",
+  },
+  quote: {
+    color: "white",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
+  },
   scoop: {
     height: "14rem",
     width: "15rem",
@@ -13,8 +22,8 @@ const styles = {
 
 export default function Profile() {
   return (
-    <div className="row p-5 justify-content-around">
-      <h1> YOUR PAST ORDERS</h1>
+    <div className="row p-5 justify-content-around" style={styles.container}>
+      <h1 style={styles.quote}> YOUR PAST ORDERS</h1>
       {/* card 1 */}
       <div className="d-flex flex-column my-5 col-xl-3 col-lg-4 col-md-5 col-sm-6">
         <div
@@ -91,7 +100,7 @@ export default function Profile() {
           </div>
         </div>
       </div>
-      <h1> YOUR FLAVORITES </h1>
+      <h1 style={styles.quote}> YOUR FLAVORITES </h1>
       {/* card 5 */}
       <div className="d-flex flex-column my-5 col-xl-3 col-lg-4 col-md-5 col-sm-6">
         <div
