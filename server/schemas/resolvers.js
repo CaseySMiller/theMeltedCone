@@ -54,7 +54,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
-    },
+    
 
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
@@ -93,6 +93,7 @@ const resolvers = {
       return { session: session.id };
     },
   },
+
   Mutation: {
     addUser: async (parent, { firstName, lastName, email, password }) => {
       const user = await User.create({ firstName, lastName, email, password });
