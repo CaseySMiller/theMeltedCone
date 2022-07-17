@@ -1,4 +1,5 @@
 export function pluralize(name, count) {
+
     if (count === 1) {
         return name;
     }
@@ -53,4 +54,5 @@ export function idbPromise(storeName, method, object) {
         };
     };
     });
+
 }
