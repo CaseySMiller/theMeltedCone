@@ -33,12 +33,12 @@ const styles = {
 export default function About() {
   return (
     <div className="row p-5 justify-content-around" style={styles.container}>
-      <div>
-        <h3 style={styles.flavorites}>
+      <div style={styles.flavorites}>
+        <h3>
           Make life even sweeter here at the Melted Cone. Subscribe and cool off
           with a sweet treat delivered right to your door.
         </h3>
-        <h3 style={styles.flavorites}>
+        <h3>
           Regardless of the weather, ice cream is the perfect treat for any
           occassion and with us you can try new flavors without the hassle.
           Share with your family or eat it yourself (we dont judge!)
