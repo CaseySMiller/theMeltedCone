@@ -84,7 +84,7 @@ const Navbar = () => {
           <>
             <Link
               style={styles.navbar}
-              className="btn bg-light m-1"
+              className="btn bg-light m-1 "
               to="/profile"
             >
               {userData.firstName}'s profile
@@ -118,9 +118,12 @@ const Navbar = () => {
         )}
         <div style={styles.navbar} id="cart">
           <Button
+            style={styles.navbar}
             // variant="primary"
             onClick={handleShow}
-            className="bg-transparent"
+            className="btn btn-light bg-light m-1"
+            type="button"
+            id="cartBtn"
           >
             <img src={Image} style={styles.cartBtn} />
           </Button>
