@@ -2,6 +2,8 @@ import React from "react";
 // import "../style.css";
 import Image from "../assets/images/main-pg-image.png";
 import { Link } from "react-router-dom";
+
+
 const styles = {
   container: {
     backgroundColor: "#FFD6E8",

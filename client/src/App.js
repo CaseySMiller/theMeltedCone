@@ -18,6 +18,8 @@ import About from "./pages/About";
 import Order from "./pages/Order";
 import Contact from "./pages/Contact";
 import Subscribe from "./pages/Subscribe";
+import Profile from "./pages/Profile";
+
 // import Cart from "./pages/Cart";
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -55,6 +57,7 @@ export default function App() {
               <Route exact path="/order" element={<Order />} />
               <Route exact path="/contact" element={<Contact />} />
               <Route exact path="/subscribe" element={<Subscribe />} />
+              <Route exact path="/profile" element={<Profile />} />
             </Routes>
             <Footer />
           </div>
