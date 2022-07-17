@@ -15,8 +15,24 @@ const styles = {
     height: "14rem",
     width: "15rem",
   },
+  quote: {
+    color: "white",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
+  },
   card: {
     maxWidth: "28rem",
+  },
+  container: {
+    backgroundColor: "#FFD6E8",
+  },
+  flavorites: {
+    marginTop: 45,
+    color: "#FF007F",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
   },
 };
 
@@ -32,14 +48,20 @@ export default function Profile() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title"> ICE CREAM FLAVOR</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               This flavor was enjoyed in your previous order, click below to add
               to your current order so you can enjoy this flavor again
             </p>
           </div>
           <div className="card-body">
-            <a className="card-link"> ORDER AGAIN? </a>
+            <a className="card-link" style={styles.flavorites}>
+              {" "}
+              ORDER AGAIN?{" "}
+            </a>
           </div>
         </div>
       </div>
@@ -51,14 +73,20 @@ export default function Profile() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title"> ICE CREAM FLAVOR</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               This flavor was enjoyed in your previous order, click below to add
               to your current order so you can enjoy this flavor again
             </p>
           </div>
           <div className="card-body">
-            <a className="card-link"> ORDER AGAIN? </a>
+            <a className="card-link" style={styles.flavorites}>
+              {" "}
+              ORDER AGAIN?{" "}
+            </a>
           </div>
         </div>
       </div>
@@ -70,14 +98,20 @@ export default function Profile() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title"> ICE CREAM FLAVOR</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               This flavor was enjoyed in your previous order, click below to add
               to your current order so you can enjoy this flavor again
             </p>
           </div>
           <div className="card-body">
-            <a className="card-link"> ORDER AGAIN? </a>
+            <a className="card-link" style={styles.flavorites}>
+              {" "}
+              ORDER AGAIN?{" "}
+            </a>
           </div>
         </div>
       </div>
@@ -89,14 +123,20 @@ export default function Profile() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title"> ICE CREAM FLAVOR</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               This flavor was enjoyed in your previous order, click below to add
               to your current order so you can enjoy this flavor again
             </p>
           </div>
           <div className="card-body">
-            <a className="card-link"> ORDER AGAIN? </a>
+            <a className="card-link" style={styles.flavorites}>
+              {" "}
+              ORDER AGAIN?{" "}
+            </a>
           </div>
         </div>
       </div>
@@ -109,15 +149,24 @@ export default function Profile() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title"> ICE CREAM FLAVOR</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               This flavor was enjoyed in your previous order, click below to add
               to your current order so you can enjoy this flavor again
             </p>
           </div>
           <div className="card-body">
-            <a className="card-link"> ORDER AGAIN? </a>
-            <a className="card-link"> REMOVE FROM FLAVORITES? </a>
+            <a className="card-link" style={styles.flavorites}>
+              {" "}
+              ORDER AGAIN?{" "}
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              {" "}
+              REMOVE FROM FLAVORITES?{" "}
+            </a>
           </div>
         </div>
       </div>
@@ -129,15 +178,24 @@ export default function Profile() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title"> ICE CREAM FLAVOR</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               This flavor was enjoyed in your previous order, click below to add
               to your current order so you can enjoy this flavor again
             </p>
           </div>
           <div className="card-body">
-            <a className="card-link"> ORDER AGAIN? </a>
-            <a className="card-link"> REMOVE FROM FLAVORITES? </a>
+            <a className="card-link" style={styles.flavorites}>
+              {" "}
+              ORDER AGAIN?{" "}
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              {" "}
+              REMOVE FROM FLAVORITES?{" "}
+            </a>
           </div>
         </div>
       </div>
@@ -149,15 +207,24 @@ export default function Profile() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title"> ICE CREAM FLAVOR</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               This flavor was enjoyed in your previous order, click below to add
               to your current order so you can enjoy this flavor again
             </p>
           </div>
           <div className="card-body">
-            <a className="card-link"> ORDER AGAIN? </a>
-            <a className="card-link"> REMOVE FROM FLAVORITES? </a>
+            <a className="card-link" style={styles.flavorites}>
+              {" "}
+              ORDER AGAIN?{" "}
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              {" "}
+              REMOVE FROM FLAVORITES?{" "}
+            </a>
           </div>
         </div>
       </div>{" "}
@@ -169,15 +236,24 @@ export default function Profile() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title"> ICE CREAM FLAVOR</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               This flavor was enjoyed in your previous order, click below to add
               to your current order so you can enjoy this flavor again
             </p>
           </div>
           <div className="card-body">
-            <a className="card-link"> ORDER AGAIN? </a>
-            <a className="card-link"> REMOVE FROM FLAVORITES? </a>
+            <a className="card-link" style={styles.flavorites}>
+              {" "}
+              ORDER AGAIN?{" "}
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              {" "}
+              REMOVE FROM FLAVORITES?{" "}
+            </a>
           </div>
         </div>
       </div>
