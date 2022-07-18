@@ -7,6 +7,8 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { StoreProvider } from "./utils/GlobalState";
+
 import Header from "./components/header";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
@@ -20,6 +22,7 @@ import Contact from "./pages/Contact";
 import Subscribe from "./pages/Subscribe";
 import Profile from "./pages/Profile";
 
+// import OrderHistory from "./pages/OrderHistory";
 // import Cart from "./pages/Cart";
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -43,26 +46,28 @@ const client = new ApolloClient({
 export default function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <div>
-          <Header />
-          <Navbar />
-          {/* <Home /> */}
+      <StoreProvider>
+        <Router>
           <div>
-            <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/login" element={<Login />} />
-              <Route exact path="/signup" element={<Signup />} />
-              <Route exact path="/about" element={<About />} />
-              <Route exact path="/order" element={<Order />} />
-              <Route exact path="/contact" element={<Contact />} />
-              <Route exact path="/subscribe" element={<Subscribe />} />
-              <Route exact path="/profile" element={<Profile />} />
-            </Routes>
-            <Footer />
+            <Header />
+            <Navbar />
+            {/* <Home /> */}
+            <div>
+              <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/login" element={<Login />} />
+                <Route exact path="/signup" element={<Signup />} />
+                <Route exact path="/about" element={<About />} />
+                <Route exact path="/order" element={<Order />} />
+                <Route exact path="/contact" element={<Contact />} />
+                <Route exact path="/subscribe" element={<Subscribe />} />
+                <Route exact path="/profile" element={<Profile />} />
+              </Routes>
+              <Footer />
+            </div>
           </div>
-        </div>
-      </Router>
+        </Router>
+      </StoreProvider>
     </ApolloProvider>
   );
 }
