@@ -18,7 +18,7 @@ const styles = {
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
 
-  const { image, name, _id, price, quantity } = item;
+  const { flavor, _id, price, size } = item;
 
   const { cart } = state;
 
@@ -51,14 +51,15 @@ function ProductItem(item) {
           className="card align-items-center text-center"
         >
           <Link to={`/products/${_id}`}>
-            <img alt={name} src={`/images/${image}`} />
+            <img alt={flavor} />
+            {/* src={`/images/${image}`} */}
             <h5 className="card-title" style={styles.flavorites}>
-              {name}
+              {flavor}
             </h5>
           </Link>
           <div>
             <div>
-              {quantity} {pluralize("item", quantity)} in stock
+              {size} {pluralize("item", size)} in stock
             </div>
             <span>${price}</span>
           </div>
