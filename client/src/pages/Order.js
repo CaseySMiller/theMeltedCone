@@ -9,6 +9,13 @@ const styles = {
   card: {
     maxWidth: "28rem",
   },
+  flavorites: {
+    marginTop: 45,
+    color: "#FF007F",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
+  },
 };
 export default function Order() {
   return (
@@ -21,65 +28,49 @@ export default function Order() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
           </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">An item</li>
-            <li className="list-group-item">A second item</li>
-            <li className="list-group-item">A third item</li>
-          </ul>
-          <div className="card-body">
-            {/* MODAL BUTTON  */}
+          <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
             <button
-              type="button"
-              className="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
+              class="btn btn-link px-2"
+              onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
             >
-              Launch demo modal
+              <i class="fas fa-minus"></i>
             </button>
 
-            {/* MODAL */}
-            <div
-              className="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
+            <input
+              id="form1"
+              min="0"
+              name="quantity"
+              value="1"
+              type="number"
+              class="form-control form-control-sm"
+            />
+
+            <button
+              class="btn btn-link px-2"
+              onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
             >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h5 className="modal-title" id="exampleModalLabel">
-                      Modal title
-                    </h5>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div className="modal-body">...</div>
-                  <div className="modal-footer">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button type="button" className="btn btn-primary">
-                      Save changes
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+            <h6 class="mb-0">€ 44.00</h6>
+          </div>
+          <div className="card-body">
+            <a className="card-link" style={styles.flavorites}>
+              Card link
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              Another link
+            </a>
           </div>
         </div>
       </div>
@@ -91,7 +82,10 @@ export default function Order() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -103,8 +97,12 @@ export default function Order() {
             <li className="list-group-item">A third item</li>
           </ul>
           <div className="card-body">
-            <a className="card-link">Card link</a>
-            <a className="card-link">Another link</a>
+            <a className="card-link" style={styles.flavorites}>
+              Card link
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              Another link
+            </a>
           </div>
         </div>
       </div>
@@ -116,7 +114,10 @@ export default function Order() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -128,8 +129,12 @@ export default function Order() {
             <li className="list-group-item">A third item</li>
           </ul>
           <div className="card-body">
-            <a className="card-link">Card link</a>
-            <a className="card-link">Another link</a>
+            <a className="card-link" style={styles.flavorites}>
+              Card link
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              Another link
+            </a>
           </div>
         </div>
       </div>
@@ -141,7 +146,10 @@ export default function Order() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -153,8 +161,12 @@ export default function Order() {
             <li className="list-group-item">A third item</li>
           </ul>
           <div className="card-body">
-            <a className="card-link">Card link</a>
-            <a className="card-link">Another link</a>
+            <a className="card-link" style={styles.flavorites}>
+              Card link
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              Another link
+            </a>
           </div>
         </div>
       </div>
@@ -166,7 +178,10 @@ export default function Order() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -178,8 +193,12 @@ export default function Order() {
             <li className="list-group-item">A third item</li>
           </ul>
           <div className="card-body">
-            <a className="card-link">Card link</a>
-            <a className="card-link">Another link</a>
+            <a className="card-link" style={styles.flavorites}>
+              Card link
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              Another link
+            </a>
           </div>
         </div>
       </div>
@@ -191,7 +210,10 @@ export default function Order() {
         >
           <img style={styles.scoop} src={Image} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title" style={styles.flavorites}>
+              {" "}
+              ICE CREAM FLAVOR
+            </h5>
             <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -203,8 +225,12 @@ export default function Order() {
             <li className="list-group-item">A third item</li>
           </ul>
           <div className="card-body">
-            <a className="card-link">Card link</a>
-            <a className="card-link">Another link</a>
+            <a className="card-link" style={styles.flavorites}>
+              Card link
+            </a>
+            <a className="card-link" style={styles.flavorites}>
+              Another link
+            </a>
           </div>
         </div>
       </div>

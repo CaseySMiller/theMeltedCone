@@ -33,7 +33,7 @@ const styles = {
 export default function About() {
   return (
     <div className="row p-5 justify-content-around" style={styles.container}>
-      <div style={styles.quote}>
+      <div style={styles.flavorites}>
         <h3>
           Make life even sweeter here at the Melted Cone. Subscribe and cool off
           with a sweet treat delivered right to your door.

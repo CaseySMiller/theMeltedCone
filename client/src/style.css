@@ -1,3 +1,7 @@
 #about:hover {
     color: white;
 }
+
+#cartBtn:hover {
+    color: "#FF007F"
+}

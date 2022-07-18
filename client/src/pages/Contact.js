@@ -38,7 +38,7 @@ export default function Contact() {
         className="d-flex flex-column align-items-center"
         style={styles.container}
       >
-        <h3 style={styles.quote}>
+        <h3 style={styles.flavorites}>
           Have Questions, or just wish to connect with our team? Please contact
           us, We'd love to hear from you!
           {/* Please fill outthe fields below and we will be in touch as soon as we can! */}
