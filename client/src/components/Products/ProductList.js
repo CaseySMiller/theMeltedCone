@@ -5,7 +5,6 @@ import { UPDATE_PRODUCTS } from "../../utils/actions";
 import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
-// import spinner from "../../assets/spinner.gif";
 
 function ProductList() {
   const [state, dispatch] = useStoreContext();
@@ -50,12 +49,12 @@ function ProductList() {
         <div className="flex-row">
           {filterProducts().map((product) => (
             <ProductItem
-              key={product._id}
+              // key={product._id}
               _id={product._id}
-              image={product.image}
-              name={product.name}
+              // image={product.image}
+              flavor={product.flavor}
               price={product.price}
-              quantity={product.quantity}
+              size={product.size}
             />
           ))}
         </div>
@@ -67,4 +66,4 @@ function ProductList() {
   );
 }
 
-export default ProductList();
+export default ProductList;
