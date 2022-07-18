@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_USER = gql`
-  query{
+  query {
     user {
       _id
       firstName
@@ -70,3 +70,21 @@ export const QUERY_CATEGORIES = gql`
   }
 `;
 
+export const QUERY_ORDER = gql`
+  query Query($id: ID!) {
+    order(_id: $id) {
+      _id
+      purchaseDate
+      products {
+        _id
+        flavor
+        toppings
+        description
+        image
+        quantity
+        price
+        size
+      }
+    }
+  }
+`;
