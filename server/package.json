@@ -22,7 +22,8 @@
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^6.1.8",
         "react-bootstrap": "^2.4.0",
-        "stripe": "^9.13.0"
+        "stripe": "^9.14.0"
+
     },
     "devDependencies": {
         "nodemon": "^2.0.3"
