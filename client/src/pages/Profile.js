@@ -24,9 +24,6 @@ const styles = {
   card: {
     maxWidth: "28rem",
   },
-  container: {
-    backgroundColor: "#FFD6E8",
-  },
   flavorites: {
     marginTop: 45,
     color: "#FF007F",
