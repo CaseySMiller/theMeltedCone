@@ -61,7 +61,6 @@ export default function App() {
             </Routes>
             <Footer />
           </div>
-
         </div>
       </Router>
     </ApolloProvider>
