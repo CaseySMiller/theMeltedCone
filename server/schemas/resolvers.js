@@ -9,20 +9,8 @@ const resolvers = {
     categories: async () => {
       return await Category.find();
     },
-    products: async (parent, { category, name }) => {
-      const params = {};
-
-      if (category) {
-        params.category = category;
-      }
-
-      if (name) {
-        params.name = {
-          $regex: name,
-        };
-      }
-
-      return await Product.find(params).populate("category");
+    products: async () => {
+      return await Product.find();
     },
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate("category");
