@@ -23,6 +23,12 @@ const styles = {
     fontFamily: "Syncopate",
     fontDisplay: "sans-serif",
   },
+  cartBtn: {
+    color: "#f9a6ca",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
+  },
 };
 
 function ProductItem(item) {
@@ -79,20 +85,20 @@ function ProductItem(item) {
         )}
 
         <div className="card-body">
-          <Link to={`/products/${_id}`}>
-            <h5 className="card-title" style={styles.flavorites}>
-              {flavor}
-            </h5>
-          </Link>
+          {/* <Link to={`/products/${_id}`}> */}
+          <h5 className="card-title" style={styles.flavorites}>
+            {flavor}
+          </h5>
+          {/* </Link> */}
           <span style={styles.price}>${price}</span>
           <span>{size}</span>
         </div>
 
         <button
           onClick={addToCart}
-          style={styles.img}
+          style={styles.cartBtn}
           src={cartImg}
-          className="btn bg-secondary"
+          className="btn btn-outline-secondary"
         >
           Add to Cart
         </button>
