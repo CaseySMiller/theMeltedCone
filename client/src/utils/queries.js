@@ -53,7 +53,7 @@ export const QUERY_ALL_PRODUCTS = gql`
       flavor
       description
       price
-      quantity
+      image
       category {
         name
       }

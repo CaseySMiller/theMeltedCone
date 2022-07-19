@@ -55,7 +55,8 @@ function ProductItem(item) {
     }
   };
 
-  const productImage = "../../assets/productimages/chocolate.jpg";
+  const productImage = `/assets/productimages/${image}`;
+  
 
   return (
     <div className="row p-2 justify-content-around">
