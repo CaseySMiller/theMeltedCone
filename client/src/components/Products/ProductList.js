@@ -66,7 +66,7 @@ function ProductList(item) {
         share it with your family <span style={styles.span}>or</span>
       </h2>
       <h2 style={styles.flavorites2}>eat it yourself</h2>
-      <h6 style={styles.flavorites3}>(we don't judge!)</h6>
+      <h6 style={styles.flavorites3}>we don't judge!</h6>
       <div className="row p-2 justify-content-around">
         {loading ? (
           <div>
