@@ -3,9 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import ProductList from "../components/Products/ProductList";
 import Image from "../assets/images/main-pg-image.png";
-import Image1 from "../assets/productimages/strawberry.jpg";
-import Image2 from "../assets/productimages/chocolate.jpg";
-import Image3 from "../assets/productimages/vanilla.jpg";
+
 
 const styles = {
   container: {
@@ -95,7 +93,7 @@ export default function Home() {
               >
                 <img
                   style={styles.scoop}
-                  src={Image1}
+                  src="/assets/productimages/strawberry.jpg"
                   className="card-img-top"
                 />
                 <div className="card-body" style={styles.cardcontainer}>
@@ -130,7 +128,7 @@ export default function Home() {
               >
                 <img
                   style={styles.scoop}
-                  src={Image2}
+                  src="/assets/productimages/Chocolate.jpg"
                   className="card-img-top"
                 />
                 <div className="card-body" style={styles.cardcontainer}>
@@ -153,7 +151,7 @@ export default function Home() {
               >
                 <img
                   style={styles.scoop}
-                  src={Image3}
+                  src="/assets/productimages/vanilla.jpg"
                   className="card-img-top"
                 />
                 <div className="card-body" style={styles.cardcontainer}>
