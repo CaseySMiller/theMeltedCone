@@ -9,7 +9,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+const stripePromise = loadStripe("pk_test_51LMxbWLiFJWp9Vy7F8KaEihxJInmqlN3kMfKgEsITzLGW8gepMrMH6Y8JMRVzzyeAwCMtfYTEGa1xZ71rVRPRWPQ00REkKe7Gc");
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
