@@ -23,6 +23,7 @@ const styles = {
     fontFamily: "Syncopate",
     fontDisplay: "sans-serif",
     display: "inline-block",
+    margin: "0.5rem"
   },
   cartBtn: {
     height: "1.5rem",
@@ -73,111 +74,115 @@ const Navbar = () => {
     });
   }
   return (
-    <nav id="nav-bar" className="w-100 mt-auto p-3" style={styles.navbar}>
-      <ul style={styles.navbar}>
-        <li id="about">
-          {" "}
-          <Link style={styles.navbar} to="/about">
-            {" "}
-            ABOUT US{" "}
-          </Link>{" "}
-        </li>
-        <li>
-          {" "}
-          <Link style={styles.navbar} to="/order" id="order">
-            {" "}
-            ORDER{" "}
-          </Link>{" "}
-        </li>
-        <li>
-          {" "}
-          <Link style={styles.navbar} to="/contact" id="contact">
-            {" "}
-            CONTACT{" "}
-          </Link>{" "}
-        </li>
-        <li>
-          {" "}
-          <Link style={styles.navbar} to="/subscribe" id="subscribe">
-            {" "}
-            SUBSCRIBE{" "}
-          </Link>{" "}
-        </li>
-      </ul>
-      <div>
-        {Auth.loggedIn() ? (
-          <>
-            <Link
-              style={styles.navbar}
-              className="btn bg-light m-1 "
-              to="/profile"
-            >
-              {userData.firstName}'s profile
-            </Link>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <ul>
+          <li style={styles.navbar} id="about">
+              {" "}
+              <Link style={styles.navbar} to="/about">
+                {" "}
+                ABOUT US{" "}
+              </Link>{" "}
+            </li>
+            <li style={styles.navbar}>
+              {" "}
+              <Link style={styles.navbar} to="/order" id="order">
+                {" "}
+                ORDER{" "}
+              </Link>{" "}
+            </li>
+            <li style={styles.navbar}>
+              {" "}
+              <Link style={styles.navbar} to="/contact" id="contact">
+                {" "}
+                CONTACT{" "}
+              </Link>{" "}
+            </li>
+            <li style={styles.navbar}>
+              {" "}
+              <Link style={styles.navbar} to="/subscribe" id="subscribe">
+                {" "}
+                SUBSCRIBE{" "}
+              </Link>{" "}
+              </li>
+          </ul>
+        <div class="d-flex">
+          <div>
+            {Auth.loggedIn() ? (
+              <>
+                <Link
+                  style={styles.navbar}
+                  className="btn bg-light m-1 "
+                  to="/profile"
+                >
+                  {userData.firstName}'s profile
+                </Link>
 
-            <a
-              style={styles.navbar}
-              className="btn bg-light m-1"
-              onClick={logout}
-            >
-              Logout
-            </a>
-          </>
-        ) : (
-          <>
-            <Link
-              style={styles.navbar}
-              className="btn bg-light m-1"
-              to="/Login"
-            >
-              Login
-            </Link>
-            <Link
-              style={styles.navbar}
-              className="btn bg-light m-1"
-              to="/Signup"
-            >
-              Signup
-            </Link>
-          </>
-        )}
-        <div style={styles.navbar} id="cart">
-          <Link
-            to="/order"
-            style={styles.navbar}
-            // variant="primary"
-            onClick={handleShow}
-            className="btn btn-light bg-light m-1"
-            type="button"
-            id="cartBtn"
-          >
-            <img src={Image} style={styles.cartBtn} />
-          </Link>
-          {/* removed cart from here */}
-          {["end"].map((placement, idx) => (
-            <Offcanvas
-              key={idx}
-              placement={placement}
-              name={placement}
-              show={show}
-              onHide={handleClose}
-              className="align-items-center justify-content-between"
-              id="offcanvasRight"
-              style={styles.cart}
-            >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title>your freezer</Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Cart />
-              </Offcanvas.Body>
-            </Offcanvas>
-          ))}
-        </div>
+                <a
+                  style={styles.navbar}
+                  className="btn bg-light m-1"
+                  onClick={logout}
+                >
+                  Logout
+                </a>
+              </>
+            ) : (
+                <>
+                <Link
+                  style={styles.navbar}
+                  className="btn bg-light m-1"
+                  to="/Login"
+                >
+                  Login
+                </Link>
+                <Link
+                  style={styles.navbar}
+                  className="btn bg-light m-1"
+                  to="/Signup"
+                >
+                  Signup
+                  </Link>
+                  
+              </>
+            )}
+            <div style={styles.navbar} id="cart">
+              <Link
+                to="/order"
+                style={styles.navbar}
+                // variant="primary"
+                onClick={handleShow}
+                className="btn btn-light bg-light m-1"
+                type="button"
+                id="cartBtn"
+              >
+                <img src={Image} style={styles.cartBtn} />
+              </Link>
+              {/* removed cart from here */}
+              {["end"].map((placement, idx) => (
+                <Offcanvas
+                  key={idx}
+                  placement={placement}
+                  name={placement}
+                  show={show}
+                  onHide={handleClose}
+                  className="align-items-center justify-content-between"
+                  id="offcanvasRight"
+                  style={styles.cart}
+                >
+                  <Offcanvas.Header closeButton>
+                    <Offcanvas.Title>your freezer</Offcanvas.Title>
+                  </Offcanvas.Header>
+                  <Offcanvas.Body>
+                    <Cart />
+                  </Offcanvas.Body>
+                </Offcanvas>
+                ))}
+              </div>
+            </div>
+          </div>
       </div>
     </nav>
-  );
-};
+    )};
 
 export { styles };
 export default Navbar;
