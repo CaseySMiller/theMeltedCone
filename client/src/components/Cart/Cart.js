@@ -6,20 +6,16 @@ import { idbPromise } from "../../utils/helpers";
 import CartItem from "./CartItem"; 
 import Auth from "../../utils/auth";
 import { useStoreContext } from "../../utils/GlobalState";
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import {styles} from "../navbar";
-// import './style.css';  //commented out for now---------------
+import { ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 const Cart = () => {
-  // console.log(useStoreContext());
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+  // const handleClose = () => setShow(false);
 
   // We check to see if there is a data object that exists, if so this means that a checkout session was returned from the backend
   // Then we should redirect to the checkout with a reference to our session id
@@ -33,21 +29,21 @@ const Cart = () => {
 
   // If the cart's length or if the dispatch function is updated, check to see if the cart is empty.
   // If so, invoke the getCart method and populate the cart with the existing from the session
+  let cartLoaded = false;
   useEffect(() => {
     async function getCart() {
+      cartLoaded = true;
       const cart = await idbPromise("cart", "get");
-      console.log(cart);
-      dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
+      if(!state.cart.length) {
+        dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
+      }
     }
 
-    if (!state.cart.length) {
+    if (!state.cart.length && !cartLoaded) {
       getCart();
     }
   }, [state.cart.length, dispatch]);
 
-  // function toggleCart() {
-  //   dispatch({ type: TOGGLE_CART });
-  // }
 
   function calculateTotal() {
     let sum = 0;
