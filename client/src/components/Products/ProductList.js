@@ -42,26 +42,27 @@ function ProductList(item) {
 
   return (
     <div className="my-2">
-      <h2></h2>
-      {loading ? (
-        <div>
-          <h1 style={styles.flavorites}>
-            All Sold Out... But don't worry, we will get our freezer stocked up
-            in no time !
-          </h1>
-        </div>
-      ) : (
-        products.map((product) => (
-          <ProductItem
-            key={product._id}
-            _id={product._id}
-            image={product.image}
-            flavor={product.flavor}
-            price={product.price}
-            // quantity={product.quantity}
-          />
-        ))
-      )}
+      <h2 style={styles.flavorites}>stock your freezer</h2>
+      <div className="row p-2 justify-content-around">
+        {loading ? (
+          <div>
+            <h1 style={styles.flavorites}>
+              All Sold Out... But don't worry, we will get our freezer stocked
+              up in no time !
+            </h1>
+          </div>
+        ) : (
+          products.map((product) => (
+            <ProductItem
+              key={product._id}
+              _id={product._id}
+              image={product.image}
+              flavor={product.flavor}
+              price={product.price}
+            />
+          ))
+        )}
+      </div>
     </div>
   );
 }
