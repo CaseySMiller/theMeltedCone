@@ -43,5 +43,17 @@
     "image": "mango.PNG",
     "size": "single pint",
     "price": "7.99"
+  },
+      {
+    "flavor": "Cookie Dough",
+    "image": "ookies.jpg",
+    "size": "single pint",
+    "price": "7.99"
+  },
+  {
+    "flavor": "Green Tea",
+    "image": "greentea.PNG",
+    "size": "single pint",
+    "price": "7.99"
   }
 ]
