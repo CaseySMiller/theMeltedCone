@@ -21,7 +21,7 @@ import Order from "./pages/Order";
 import Contact from "./pages/Contact";
 import Subscribe from "./pages/Subscribe";
 import Profile from "./pages/Profile";
-// import Cart from "./components/Cart/Cart";
+import Cart from "./components/Cart/Cart";
 
 // import OrderHistory from "./pages/OrderHistory";
 const httpLink = createHttpLink({
@@ -62,7 +62,7 @@ export default function App() {
                 <Route exact path="/contact" element={<Contact />} />
                 <Route exact path="/subscribe" element={<Subscribe />} />
                 <Route exact path="/profile" element={<Profile />} />
-                {/* <Route exact path="/cart" element={<Cart />} /> */}
+                <Route exact path="/cart" element={<Cart />} />
               </Routes>
               <Footer />
             </div>
