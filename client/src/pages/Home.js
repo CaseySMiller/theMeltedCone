@@ -2,6 +2,7 @@ import React from "react";
 // import "../style.css";
 import Image from "../assets/images/main-pg-image.png";
 import { Link } from "react-router-dom";
+import ProductList from "../components/Products/ProductList";
 
 const styles = {
   container: {
@@ -64,7 +65,8 @@ export default function Home() {
       </div>
 
       <div>
-        <h1 style={styles.flavorites}>FLAVORITES OF THE WEEK </h1>
+        <h1 style={styles.flavorites}> OUR FLAVORITES OF THE WEEK </h1>
+        <ProductList />
       </div>
     </div>
   );
