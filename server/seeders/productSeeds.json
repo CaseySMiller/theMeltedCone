@@ -4,8 +4,8 @@
     "toppings": "nuts",
     "sizes": "small",
 
-    "price": "2.50",
-    "size": "small",
+    "price": "7.99",
+    "size": "single pint",
     "image": "chocolate.jpg"
   },
   {
@@ -14,15 +14,34 @@
     "sizes": "medium",
     "image": "strawberry.jpg",
 
-    "price": "4.75",
-    "size": "medium"
+    "price": "7.99",
+    "size": "single pint"
   },
   {
     "flavor": "Vanilla",
     "toppings": "fudge",
     "sizes": "large",
     "image": "vanilla.jpg",
-    "price": "7.25",
-    "size": "large"
+    "price": "7.99",
+    "size": "single pint"
+  },
+  {
+    "flavor": "Blackberry",
+    "image": "blackberry.jpg",
+    "size": "single pint",
+    "price": "7.99"
+    
+  },
+    {
+    "flavor": "Caramel",
+    "image": "caramel.jpg",
+    "size": "single pint",
+    "price": "7.99"
+  },
+    {
+    "flavor": "mango",
+    "image": "mango.PNG",
+    "size": "single pint",
+    "price": "7.99"
   }
 ]

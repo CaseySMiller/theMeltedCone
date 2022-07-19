@@ -19,6 +19,16 @@ const styles = {
     height: "14rem",
     width: "15rem",
   },
+  price: {
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+  },
+  cartBtn: {
+    color: "#f9a6ca",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
+  },
 };
 
 function ProductItem(item) {
@@ -29,6 +39,7 @@ function ProductItem(item) {
     _id,
     price,
     image,
+    size,
     // quantity
   } = item;
 
@@ -56,68 +67,43 @@ function ProductItem(item) {
   };
 
   const productImage = `/assets/productimages/${image}`;
-  
 
   return (
-    <div className="row p-2 justify-content-around">
-      <div className="d-flex flex-column my-3 col-xl-3 col-lg-4 col-md-5 col-sm-6">
-        <div
-          style={styles.card}
-          className="card align-items-center text-center p-3"
-        >
-          {productImage ? (
-            <img
-              style={styles.scoop}
-              className="card-img-top"
-              src={productImage}
-            />
-          ) : (
-            <img style={styles.scoop} className="card-img-top" src={Image} />
-          )}
+    <div className="d-flex flex-column my-3 col-xl-3 col-lg-4 col-md-5 col-sm-6">
+      <div
+        style={styles.card}
+        className="card align-items-center text-center p-3"
+      >
+        {productImage ? (
+          <img
+            style={styles.scoop}
+            className="card-img-top"
+            src={productImage}
+          />
+        ) : (
+          <img style={styles.scoop} className="card-img-top" src={Image} />
+        )}
 
-          <div className="card-body">
-            <Link to={`/products/${_id}`}>
-              <h5 className="card-title" style={styles.flavorites}>
-                {flavor}
-              </h5>
-            </Link>
-            <span>${price}</span>
-          </div>
-
-          <button
-            onClick={addToCart}
-            style={styles.img}
-            src={cartImg}
-            className="btn bg-secondary"
-          >
-            Add to Cart
-          </button>
+        <div className="card-body">
+          {/* <Link to={`/products/${_id}`}> */}
+          <h5 className="card-title" style={styles.flavorites}>
+            {flavor}
+          </h5>
+          {/* </Link> */}
+          <span style={styles.price}>${price}</span>
+          <span>{size}</span>
         </div>
+
+        <button
+          onClick={addToCart}
+          style={styles.cartBtn}
+          src={cartImg}
+          className="btn btn-outline-secondary"
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
-    // <div className="row p-5 justify-content-around">
-    // <div className="d-flex flex-column my-5 col-xl-3 col-lg-4 col-md-5 col-sm-6">
-    //     <div
-    //     style={styles.card}
-    //     className="card align-items-center text-center"
-    //     >
-    //     <Link to={`/products/${_id}`}>
-    //         <img alt={flavor} />
-    //         {/* src={`/images/${image}`} */}
-    //         <h5 className="card-title" style={styles.flavorites}>
-    //         {flavor}
-    //         </h5>
-    //     </Link>
-    //     <div>
-    //         <div>
-    //         {size} {pluralize("item", size)} in stock
-    //         </div>
-    //         <span>${price}</span>
-    //     </div>
-    //     <button onClick={addToCart} src={cartImg}></button>
-    //     </div>
-    // </div>
-    // </div>
   );
 }
 

@@ -6,7 +6,7 @@ const styles = {
     backgroundColor: "#FFD6E8",
   },
   quote: {
-    color: "white",
+    color: "grey",
     fontFamily: "Syncopate",
     fontDisplay: "sans-serif",
     textAlign: "center",
@@ -20,14 +20,14 @@ const styles = {
 
   flavorites: {
     marginTop: 45,
-    color: "black",
+    color: "#FF007F",
     fontFamily: "Syncopate",
     fontDisplay: "sans-serif",
     textAlign: "center",
     lineSpacing: 3,
   },
   email: {
-    color: "white",
+    color: "grey",
     fontFamily: "Syncopate",
     fontDisplay: "sans-serif",
   },
@@ -37,7 +37,7 @@ export default function Contact() {
   return (
     <div className="p-5">
       <h3 style={styles.flavorites}>
-        Have Questions, or just wish to connect with our team?
+        Have Questions or just wish to connect with our team?
         <br></br>
         <h3>Please contact us, We'd love to hear from you!</h3>
         {/* Please fill outthe fields below and we will be in touch as soon as we can! */}
@@ -57,7 +57,7 @@ export default function Contact() {
           <p style={styles.quote}>
             {" "}
             <a style={styles.email} href="mailto:themeltedcone@gmail.com">
-              themeltedcone@gmail@gmail.com.
+              themeltedcone@gmail.com
             </a>{" "}
           </p>
         </div>

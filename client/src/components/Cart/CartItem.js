@@ -2,7 +2,7 @@ import React from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
-
+const styles = {};
 const CartItem = ({ item }) => {
   const [, dispatch] = useStoreContext();
 
@@ -31,7 +31,7 @@ const CartItem = ({ item }) => {
       idbPromise("cart", "put", { ...item, purchaseQuantity: parseInt(value) });
     }
   };
-  
+
   // const imgSrc = `/images/${item.image}`;
 
   return (
@@ -52,6 +52,7 @@ const CartItem = ({ item }) => {
             placeholder="1"
             value={item.purchaseQuantity}
             onChange={onChange}
+            className="form-label"
           />
           <span
             role="img"
