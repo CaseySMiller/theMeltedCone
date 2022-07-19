@@ -103,10 +103,10 @@ export default function Home() {
                   {" "}
                   The perfect summer flavor
                 </h6>
-                <p className="card-text">
+                {/* <p className="card-text">
                   The perfect summer flavor
                   <p>Easy peasy.</p>
-                </p>
+                </p> */}
               </div>
               <div className="card-body">
                 <a className="card-link" style={styles.flavorites}>
@@ -141,12 +141,12 @@ export default function Home() {
                 </h3>
                 <h6 className="card-title" style={styles.details}>
                   {" "}
-                  rich goodness.
+                  just pure rich goodness
                 </h6>
-                <p className="card-text">
+                {/* <p className="card-text">
                   The perfect summer flavor
                   <p>Easy peasy.</p>
-                </p>
+                </p> */}
               </div>
               <div className="card-body">
                 <a className="card-link" style={styles.flavorites}>
@@ -183,10 +183,10 @@ export default function Home() {
                   {" "}
                   it's classic for a reason
                 </h6>
-                <p className="card-text">
+                {/* <p className="card-text">
                   The perfect summer flavor
                   <p>Easy peasy.</p>
-                </p>
+                </p> */}
               </div>
               <div className="card-body">
                 <a className="card-link" style={styles.flavorites}>
