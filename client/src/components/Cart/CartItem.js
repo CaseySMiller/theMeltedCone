@@ -31,15 +31,19 @@ const CartItem = ({ item }) => {
       idbPromise("cart", "put", { ...item, purchaseQuantity: parseInt(value) });
     }
   };
+  
+  const imgSrc = `/images/${item.image}`;
 
   return (
     <div className="flex-row" key={item._id}>
       <div>
-        <img src={`/images/${item.image}`} alt="" />
+        {item.image ? (
+          <img src={imgSrc} alt={item.flavor} />
+        ) : <></>}
       </div>
       <div>
         <div>
-          {item.name}, ${item.price}
+          {item.flavor}, ${item.price}
         </div>
         <div>
           <span>Qty:</span>
