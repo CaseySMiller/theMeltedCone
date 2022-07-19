@@ -3,6 +3,8 @@ import "../style.css";
 import { Link } from "react-router-dom";
 
 const Image = "/assets/productimages/blackberry.jpg";
+const Image2 = "/assets/productimages/caramel.jpg";
+const Image3 = "/assets/productimages/mango.PNG";
 const styles = {
   container: {
     backgroundColor: "#FFD6E8",
@@ -73,15 +75,15 @@ export default function Subscribe() {
               style={styles.card}
               className="card align-items-center text-center"
             >
-              <img style={styles.scoop} src={Image} className="card-img-top" />
+              <img style={styles.scoop} src={Image2} className="card-img-top" />
               <div className="card-body" style={styles.container}>
                 <h5 className="card-title" style={styles.flavorites}>
                   {" "}
-                  featured flavorite of the month
+                  upcoming - featured flavorite of the month
                 </h5>
                 <h5 className="card-title" style={styles.flavorites}>
                   {" "}
-                  july: blackberry
+                  august: caramel
                 </h5>
                 <p className="card-text">
                   Hit subscribe below to become a conehead and have ice cream
@@ -109,15 +111,15 @@ export default function Subscribe() {
               style={styles.card}
               className="card align-items-center text-center"
             >
-              <img style={styles.scoop} src={Image} className="card-img-top" />
+              <img style={styles.scoop} src={Image3} className="card-img-top" />
               <div className="card-body" style={styles.container}>
                 <h5 className="card-title" style={styles.flavorites}>
                   {" "}
-                  featured flavorite of the month
+                  upcoming - featured flavorite of the month
                 </h5>
                 <h5 className="card-title" style={styles.flavorites}>
                   {" "}
-                  july: blackberry
+                  september: mango
                 </h5>
                 <p className="card-text">
                   Hit subscribe below to become a conehead and have ice cream
