@@ -23,7 +23,8 @@ const styles = {
     fontFamily: "Syncopate",
     fontDisplay: "sans-serif",
     display: "inline-block",
-    margin: "0.5rem"
+    margin: "0.5rem",
+    fontSize: 17,
   },
   cartBtn: {
     height: "1.5rem",
@@ -38,6 +39,9 @@ const styles = {
     listStyle: "none",
     fontFamily: "Syncopate",
     fontDisplay: "sans-serif",
+  },
+  navbox: {
+    backgroundColor: "#FFD6E8",
   },
 };
 const Navbar = () => {
@@ -74,38 +78,57 @@ const Navbar = () => {
     });
   }
   return (
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light" style={styles.navbox}>
       <div class="container-fluid">
         <ul>
           <li style={styles.navbar} id="about">
+            {" "}
+            <Link
+              style={styles.navbar}
+              className="btn bg-transparent"
+              to="/about"
+            >
               {" "}
-              <Link style={styles.navbar} to="/about">
-                {" "}
-                ABOUT US{" "}
-              </Link>{" "}
-            </li>
-            <li style={styles.navbar}>
+              ABOUT US{" "}
+            </Link>{" "}
+          </li>
+          <li style={styles.navbar}>
+            {" "}
+            <Link
+              style={styles.navbar}
+              to="/order"
+              id="order"
+              className="btn bg-transparent"
+            >
               {" "}
-              <Link style={styles.navbar} to="/order" id="order">
-                {" "}
-                ORDER{" "}
-              </Link>{" "}
-            </li>
-            <li style={styles.navbar}>
+              ORDER{" "}
+            </Link>{" "}
+          </li>
+          <li style={styles.navbar}>
+            {" "}
+            <Link
+              style={styles.navbar}
+              className="btn bg-transparent"
+              to="/contact"
+              id="contact"
+            >
               {" "}
-              <Link style={styles.navbar} to="/contact" id="contact">
-                {" "}
-                CONTACT{" "}
-              </Link>{" "}
-            </li>
-            <li style={styles.navbar}>
+              CONTACT{" "}
+            </Link>{" "}
+          </li>
+          <li style={styles.navbar}>
+            {" "}
+            <Link
+              style={styles.navbar}
+              className="btn bg-transparent"
+              to="/subscribe"
+              id="subscribe"
+            >
               {" "}
-              <Link style={styles.navbar} to="/subscribe" id="subscribe">
-                {" "}
-                SUBSCRIBE{" "}
-              </Link>{" "}
-              </li>
-          </ul>
+              SUBSCRIBE{" "}
+            </Link>{" "}
+          </li>
+        </ul>
         <div class="d-flex">
           <div>
             {Auth.loggedIn() ? (
@@ -127,7 +150,7 @@ const Navbar = () => {
                 </a>
               </>
             ) : (
-                <>
+              <>
                 <Link
                   style={styles.navbar}
                   className="btn bg-light m-1"
@@ -141,8 +164,7 @@ const Navbar = () => {
                   to="/Signup"
                 >
                   Signup
-                  </Link>
-                  
+                </Link>
               </>
             )}
             <div style={styles.navbar} id="cart">
@@ -176,13 +198,14 @@ const Navbar = () => {
                     <Cart />
                   </Offcanvas.Body>
                 </Offcanvas>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
+        </div>
       </div>
     </nav>
-    )};
+  );
+};
 
 export { styles };
 export default Navbar;

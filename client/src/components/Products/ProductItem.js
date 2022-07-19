@@ -97,7 +97,6 @@ function ProductItem(item) {
         <button
           onClick={addToCart}
           style={styles.cartBtn}
-          src={cartImg}
           className="btn btn-outline-secondary"
         >
           Add to Cart
