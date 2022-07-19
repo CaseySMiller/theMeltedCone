@@ -78,7 +78,7 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <div className="justify-content-between align-items-center p-3">
+        <div className="align-items-center justify-content-between p-3">
           <h2 style={styles.flavorites}> featured flavorites of the week </h2>
         </div>
         {/* CARDS */}
@@ -103,10 +103,6 @@ export default function Home() {
                   {" "}
                   The perfect summer flavor
                 </h6>
-                <p className="card-text">
-                  The perfect summer flavor
-                  <p>Easy peasy.</p>
-                </p>
               </div>
               <div className="card-body">
                 <a className="card-link" style={styles.flavorites}>
@@ -141,12 +137,8 @@ export default function Home() {
                 </h3>
                 <h6 className="card-title" style={styles.details}>
                   {" "}
-                  rich goodness.
+                  just pure rich goodness.
                 </h6>
-                <p className="card-text">
-                  The perfect summer flavor
-                  <p>Easy peasy.</p>
-                </p>
               </div>
               <div className="card-body">
                 <a className="card-link" style={styles.flavorites}>
@@ -183,10 +175,6 @@ export default function Home() {
                   {" "}
                   it's classic for a reason
                 </h6>
-                <p className="card-text">
-                  The perfect summer flavor
-                  <p>Easy peasy.</p>
-                </p>
               </div>
               <div className="card-body">
                 <a className="card-link" style={styles.flavorites}>
