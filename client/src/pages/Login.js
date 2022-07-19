@@ -14,6 +14,12 @@ const styles = {
     color: "#FF007F",
     textDecoration: "none",
   },
+  submit: {
+    // color: "#FF007F",
+    textDecoration: "none",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+  },
 };
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -78,7 +84,13 @@ function Login(props) {
               </div>
             ) : null}
             <div className="flex-row flex-end">
-              <button type="submit">Submit</button>
+              <button
+                type="submit"
+                className="btn bg-light"
+                style={styles.submit}
+              >
+                Submit
+              </button>
             </div>
           </form>
         </div>
