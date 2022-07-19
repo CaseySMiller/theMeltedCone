@@ -10,12 +10,11 @@
 
 ## Coneheads
 
-    Team Members:
-        ✩Addi Guskey
-        ✩Casey Miller
-        ✩Rachel Kincaid
-        ✩Ryan Brisch
-        ✩Tim Bathurst
+        ✩Addi Guskey (front-end developer)
+        ✩Casey Miller (back-end developer)
+        ✩Rachel Kincaid (front-end developer)
+        ✩Ryan Brisch (back-end developer)
+        ✩Tim Bathurst (back-end developer)
 
 ## User Story
 
@@ -35,8 +34,10 @@ SO THAT I can try new flavors each month and cool off with a tasty treat
 
 ## Mock Up
 
-LOGO:  
+    LOGO:
+
 <img src = "./client/src/assets/images/logo2.png">
 
-INITIAL WIREFRAMING:
+    INITIAL WIREFRAMING:
+
 <img src = "./client/src/assets/images/meltedcone.png">
