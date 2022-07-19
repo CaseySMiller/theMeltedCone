@@ -1,8 +1,8 @@
 import React from "react";
 import "../style.css";
-import Image from "../assets/productimages/blackberry.jpg";
 import { Link } from "react-router-dom";
 
+const Image = "/assets/productimages/blackberry.jpg";
 const styles = {
   container: {
     backgroundColor: "#FFD6E8",

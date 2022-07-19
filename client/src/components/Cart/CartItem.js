@@ -32,15 +32,15 @@ const CartItem = ({ item }) => {
     }
   };
   
-  const imgSrc = `/images/${item.image}`;
+  // const imgSrc = `/images/${item.image}`;
 
   return (
     <div className="flex-row" key={item._id}>
-      <div>
+      {/* <div>
         {item.image ? (
           <img src={imgSrc} alt={item.flavor} />
         ) : <></>}
-      </div>
+      </div> */}
       <div>
         <div>
           {item.flavor}, ${item.price}

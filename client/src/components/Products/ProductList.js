@@ -33,7 +33,7 @@ const styles = {
 function ProductList(item) {
   const [state, dispatch] = useStoreContext();
 
-  const { flavor, _id, price, size } = item;
+  // const { flavor, _id, price, size } = item;
   const { cart } = state;
 
   const { loading, data } = useQuery(QUERY_ALL_PRODUCTS);

@@ -63,7 +63,7 @@ const Cart = () => {
         productIds.push(item._id);
       }
     });
-
+    console.log('cleeeeked');
     getCheckout({
       variables: { products: productIds },
     });
