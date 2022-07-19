@@ -3,11 +3,30 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useLazyQuery } from "@apollo/client";
 import { QUERY_CHECKOUT } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
-import CartItem from "./CartItem"; 
+import CartItem from "./CartItem";
 import Auth from "../../utils/auth";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_MULTIPLE_TO_CART } from "../../utils/actions";
-
+const styles = {
+  btn: {
+    color: "#f9a6ca",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
+  },
+  body: {
+    color: "black",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
+  },
+  total: {
+    color: "#FF007F",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
+  },
+};
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
@@ -34,7 +53,7 @@ const Cart = () => {
     async function getCart() {
       cartLoaded = true;
       const cart = await idbPromise("cart", "get");
-      if(!state.cart.length) {
+      if (!state.cart.length) {
         dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
       }
     }
@@ -43,7 +62,6 @@ const Cart = () => {
       getCart();
     }
   }, [state.cart.length, dispatch]);
-
 
   function calculateTotal() {
     let sum = 0;
@@ -63,7 +81,7 @@ const Cart = () => {
         productIds.push(item._id);
       }
     });
-    console.log('cleeeeked');
+    console.log("cleeeeked");
     getCheckout({
       variables: { products: productIds },
     });
@@ -72,20 +90,28 @@ const Cart = () => {
   return (
     <>
       {state.cart.length ? (
-        <div>
+        <div style={styles.body}>
           {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
 
           <div className="flex-row mt-2 space-between">
-            <strong>Total: ${calculateTotal()} </strong>
+            <strong style={styles.total}>Total: ${calculateTotal()} </strong>
 
             {/* Check to see if the user is logged in. If so render a button to check out */}
-            {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
-            ) : (
-              <span>(log in to check out)</span>
-            )}
+            <div className="justify-content-around">
+              {Auth.loggedIn() ? (
+                <button
+                  className="btn btn-secondary"
+                  onClick={submitCheckout}
+                  style={styles.btn}
+                >
+                  Checkout
+                </button>
+              ) : (
+                <span>(log in to check out)</span>
+              )}
+            </div>
           </div>
         </div>
       ) : (
