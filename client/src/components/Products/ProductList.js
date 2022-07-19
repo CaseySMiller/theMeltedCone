@@ -28,6 +28,26 @@ const styles = {
     width: "2.5rem",
     invert: 1,
   },
+  flavorites2: {
+    color: "#FF007F",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
+    textDecoration: "none",
+  },
+  flavorites3: {
+    color: "black",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
+    textDecoration: "none",
+  },
+  span: {
+    color: "#FF007F",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    fontSize: 16,
+  },
 };
 
 function ProductList(item) {
@@ -42,7 +62,11 @@ function ProductList(item) {
 
   return (
     <div className="my-2">
-      <h2 style={styles.flavorites}>stock your freezer</h2>
+      <h2 style={styles.flavorites}>
+        share it with your family <span style={styles.span}>or</span>
+      </h2>
+      <h2 style={styles.flavorites2}>eat it yourself</h2>
+      <h6 style={styles.flavorites3}>(we don't judge!)</h6>
       <div className="row p-2 justify-content-around">
         {loading ? (
           <div>
