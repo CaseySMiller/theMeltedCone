@@ -6,6 +6,7 @@ import Auth from "../utils/auth";
 import { QUERY_USER } from "../utils/queries";
 import { QUERY_CHECKOUT } from "../utils/queries";
 import { useLazyQuery } from "@apollo/client";
+import Cart from "./Cart/Cart"
 
 import { useQuery } from "@apollo/client";
 import Button from "react-bootstrap/Button";
@@ -142,7 +143,7 @@ const Navbar = () => {
         )}
         <div style={styles.navbar} id="cart">
           <Link
-            to="/Cart"
+            to="/"
             style={styles.navbar}
             // variant="primary"
             onClick={handleShow}
@@ -152,6 +153,7 @@ const Navbar = () => {
           >
             <img src={Image} style={styles.cartBtn} />
           </Link>
+          {/* removed cart from here */}
           {["end"].map((placement, idx) => (
             <Offcanvas
               key={idx}
@@ -167,22 +169,7 @@ const Navbar = () => {
                 <Offcanvas.Title>your freezer</Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <ul>
-                  <li className="list-group-item "></li>
-                </ul>
-                <div>
-                  <div className="flex-row space-between">
-                    {/* <strong>Total: ${calculateTotal()}</strong> */}
-
-                    {Auth.loggedIn() ? (
-                      <button className="btn bg-light" onClick={submitCheckout}>
-                        Checkout
-                      </button>
-                    ) : (
-                      <span>(log in to check out)</span>
-                    )}
-                  </div>
-                </div>
+                <Cart />
               </Offcanvas.Body>
             </Offcanvas>
           ))}
@@ -192,4 +179,5 @@ const Navbar = () => {
   );
 };
 
+export {styles};
 export default Navbar;
