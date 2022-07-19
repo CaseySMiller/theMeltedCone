@@ -7,7 +7,6 @@ const Order = () => {
     <div className="container">
       <ProductList />
       <Cart />
-      <h1>I WANT ICE CREAM</h1>
     </div>
   );
 };

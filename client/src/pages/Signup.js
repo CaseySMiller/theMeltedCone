@@ -91,8 +91,10 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+        <div className="flex-row flex-end ">
+          <button className="btn bg-light" type="submit">
+            Submit
+          </button>
         </div>
       </form>
     </div>
