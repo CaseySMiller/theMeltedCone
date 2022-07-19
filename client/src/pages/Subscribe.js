@@ -21,6 +21,10 @@ const styles = {
   card: {
     maxWidth: "28rem",
   },
+  btn: {
+    textDecoration: "none",
+    color: "black",
+  },
 };
 export default function Subscribe() {
   return (
@@ -37,15 +41,16 @@ export default function Subscribe() {
               <div className="card-body" style={styles.container}>
                 <h5 className="card-title" style={styles.flavorites}>
                   {" "}
-                  FEATURED FLAVORITE OF THE MONTH
+                  featured flavorite of the month
                 </h5>
                 <h5 className="card-title" style={styles.flavorites}>
                   {" "}
-                  JULY: BLACKBERRY
+                  july: blackberry
                 </h5>
                 <p className="card-text">
                   Hit subscribe below to become a conehead and have ice cream
-                  delivered to your door every month. Easy peasy.
+                  delivered to your door every month.
+                  <p>Easy peasy.</p>
                 </p>
               </div>
               <div className="card-body">
@@ -72,15 +77,16 @@ export default function Subscribe() {
               <div className="card-body" style={styles.container}>
                 <h5 className="card-title" style={styles.flavorites}>
                   {" "}
-                  FEATURED FLAVORITE OF THE MONTH
+                  featured flavorite of the month
                 </h5>
                 <h5 className="card-title" style={styles.flavorites}>
                   {" "}
-                  JULY: BLACKBERRY
+                  july: blackberry
                 </h5>
                 <p className="card-text">
                   Hit subscribe below to become a conehead and have ice cream
-                  delivered to your door every month. Easy peasy.
+                  delivered to your door every month.
+                  <p>Easy peasy.</p>
                 </p>
               </div>
               <div className="card-body">
@@ -107,15 +113,16 @@ export default function Subscribe() {
               <div className="card-body" style={styles.container}>
                 <h5 className="card-title" style={styles.flavorites}>
                   {" "}
-                  FEATURED FLAVORITE OF THE MONTH
+                  featured flavorite of the month
                 </h5>
                 <h5 className="card-title" style={styles.flavorites}>
                   {" "}
-                  JULY: BLACKBERRY
+                  july: blackberry
                 </h5>
                 <p className="card-text">
                   Hit subscribe below to become a conehead and have ice cream
-                  delivered to your door every month. Easy peasy.
+                  delivered to your door every month.
+                  <p>Easy peasy.</p>
                 </p>
               </div>
               <div className="card-body">
