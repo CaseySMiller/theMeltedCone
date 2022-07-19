@@ -6,7 +6,7 @@ import Auth from "../utils/auth";
 import { QUERY_USER } from "../utils/queries";
 import { QUERY_CHECKOUT } from "../utils/queries";
 import { useLazyQuery } from "@apollo/client";
-import Cart from "./Cart/Cart"
+import Cart from "./Cart/Cart";
 
 import { useQuery } from "@apollo/client";
 import Button from "react-bootstrap/Button";
@@ -143,7 +143,7 @@ const Navbar = () => {
         )}
         <div style={styles.navbar} id="cart">
           <Link
-            to="/"
+            to="/order"
             style={styles.navbar}
             // variant="primary"
             onClick={handleShow}
@@ -179,5 +179,5 @@ const Navbar = () => {
   );
 };
 
-export {styles};
+export { styles };
 export default Navbar;
