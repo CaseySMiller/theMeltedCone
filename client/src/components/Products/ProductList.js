@@ -101,7 +101,7 @@ function ProductList(item) {
                   onClick={addToCart}
                   style={styles.img}
                   src={cartImg}
-                  className="btn bg-transparent"
+                  className="btn bg-secondary"
                 ></button>
               </div>
             </div>
