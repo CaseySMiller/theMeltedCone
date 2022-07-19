@@ -4,9 +4,14 @@ import { Link } from "react-router-dom";
 import Image from "../assets/images/shopping-cart.png";
 import Auth from "../utils/auth";
 import { QUERY_USER } from "../utils/queries";
+import { QUERY_CHECKOUT } from "../utils/queries";
+import { useLazyQuery } from "@apollo/client";
+
 import { useQuery } from "@apollo/client";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../utils/actions";
+import { useStoreContext } from "../utils/GlobalState";
 
 const styles = {
   navbar: {
@@ -21,6 +26,8 @@ const styles = {
   cartBtn: {
     height: "1.5rem",
     width: "1.5rem",
+    color: "#FF007F",
+
     // filter: "invert(1)",
   },
   cart: {
@@ -33,6 +40,8 @@ const styles = {
 };
 const Navbar = () => {
   // console.log(Auth.getProfile().data._id)
+  const [state, dispatch] = useStoreContext();
+
   const { loading, data } = useQuery(QUERY_USER);
   const [userData, setUserData] = useState({});
 
@@ -47,6 +56,21 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [getCheckout, { res }] = useLazyQuery(QUERY_CHECKOUT);
+
+  function submitCheckout() {
+    const productIds = [];
+
+    state.cart.forEach((item) => {
+      for (let i = 0; i < item.purchaseQuantity; i++) {
+        productIds.push(item._id);
+      }
+    });
+
+    getCheckout({
+      variables: { products: productIds },
+    });
+  }
   return (
     <nav id="nav-bar" className="w-100 mt-auto p-3" style={styles.navbar}>
       <ul style={styles.navbar}>
@@ -117,7 +141,8 @@ const Navbar = () => {
           </>
         )}
         <div style={styles.navbar} id="cart">
-          <Button
+          <Link
+            to="/Cart"
             style={styles.navbar}
             // variant="primary"
             onClick={handleShow}
@@ -126,7 +151,7 @@ const Navbar = () => {
             id="cartBtn"
           >
             <img src={Image} style={styles.cartBtn} />
-          </Button>
+          </Link>
           {["end"].map((placement, idx) => (
             <Offcanvas
               key={idx}
@@ -145,6 +170,19 @@ const Navbar = () => {
                 <ul>
                   <li className="list-group-item "></li>
                 </ul>
+                <div>
+                  <div className="flex-row space-between">
+                    {/* <strong>Total: ${calculateTotal()}</strong> */}
+
+                    {Auth.loggedIn() ? (
+                      <button className="btn bg-light" onClick={submitCheckout}>
+                        Checkout
+                      </button>
+                    ) : (
+                      <span>(log in to check out)</span>
+                    )}
+                  </div>
+                </div>
               </Offcanvas.Body>
             </Offcanvas>
           ))}

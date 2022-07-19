@@ -13,6 +13,12 @@ const styles = {
     color: "#FF007F",
     textDecoration: "none",
   },
+  submit: {
+    // color: "#FF007F",
+    textDecoration: "none",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+  },
 };
 function Signup(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -91,8 +97,10 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+        <div className="flex-row flex-end ">
+          <button className="btn bg-light" type="submit" style={styles.submit}>
+            Submit
+          </button>
         </div>
       </form>
     </div>
