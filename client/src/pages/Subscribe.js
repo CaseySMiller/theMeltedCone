@@ -43,7 +43,7 @@ export default function Subscribe() {
               <div className="card-body" style={styles.container}>
                 <h5 className="card-title" style={styles.flavorites}>
                   {" "}
-                  featured flavorite of the month
+                  currernt - featured flavorite of the month
                 </h5>
                 <h5 className="card-title" style={styles.flavorites}>
                   {" "}
