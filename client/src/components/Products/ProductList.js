@@ -1,55 +1,68 @@
 import React, { useEffect } from "react";
-import ProductItem from "../Products/ProductItem";
-import { useStoreContext } from "../../utils/GlobalState";
-import { UPDATE_PRODUCTS } from "../../utils/actions";
+// import ProductItem from "../Products/ProductItem";
+// import { useStoreContext } from "../../utils/GlobalState";
+// import { UPDATE_PRODUCTS } from "../../utils/actions";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_PRODUCTS } from "../../utils/queries";
-import { idbPromise } from "../../utils/helpers";
+import Image from "../../assets/images/scoop.png";
 
+const styles = {
+  scoop: {
+    height: "14rem",
+    width: "15rem",
+  },
+  card: {
+    maxWidth: "28rem",
+  },
+  flavorites: {
+    marginTop: 45,
+    color: "#FF007F",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
+  },
+};
 function ProductList() {
-  const [state, dispatch] = useStoreContext();
-
-  const { currentCategory } = state;
-
   const { loading, data } = useQuery(QUERY_ALL_PRODUCTS);
-  // if (error) {
-  //   console.log(JSON.stringify.error);
-  // }
 
-  useEffect(() => {
-    if (data) {
-      console.log(data);
-      dispatch({
-        type: UPDATE_PRODUCTS,
-        products: data.products,
-      });
-      data.products.forEach((product) => {
-        idbPromise("products", "put", product);
-      });
-    } else if (!loading) {
-      idbPromise("products", "get").then((products) => {
-        dispatch({
-          type: UPDATE_PRODUCTS,
-          products: products,
-        });
-      });
-    }
-  }, [data, loading, dispatch]);
+  const products = data?.products || [];
 
-  function filterProducts() {
-    if (!currentCategory) {
-      return state.products;
-    }
-
-    return state.products.filter(
-      (product) => product.category._id === currentCategory
-    );
-  }
-
+  console.log(products);
   return (
     <div className="my-2">
-      <h2>Our Products:</h2>
-      {state.products.length ? (
+      <h2></h2>
+      {loading ? (
+        <div>
+          <h1 style={styles.flavorites}>
+            All Sold Out... But don't worry, we will get our freezer stocked up
+            in no time !
+          </h1>
+        </div>
+      ) : (
+        products.map((product) => (
+          <div className="row p-5 justify-content-around">
+            <div className="d-flex flex-column my-5 col-xl-3 col-lg-4 col-md-5 col-sm-6">
+              <div
+                style={styles.card}
+                className="card align-items-center text-center"
+              >
+                <img
+                  style={styles.scoop}
+                  src={Image}
+                  className="card-img-top"
+                />
+                <div className="card-body">
+                  <h5 className="card-title" style={styles.flavorites}>
+                    {product.flavor}
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      )}
+
+      {/* {state.products.length ? (
         <div className="flex-row">
           {filterProducts().map((product) => (
             <ProductItem
@@ -64,8 +77,7 @@ function ProductList() {
         </div>
       ) : (
         <h3>You haven't added any products yet!</h3>
-      )}
-      {/* {loading ? <img src={spinner} alt="loading" /> : null} */}
+      )} */}
     </div>
   );
 }
