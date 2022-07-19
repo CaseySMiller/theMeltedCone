@@ -1,6 +1,6 @@
-require("dotenv").config();
+require('dotenv').config({ path: '../.env' });
 const { AuthenticationError } = require("apollo-server-express");
-const stripe = require("stripe")(process.env.STRIPE_API);
+const stripe = require("stripe")(process.env.STRIPE_API_SECRET);
 const { User, Product, Category, Order } = require("../models");
 const { signToken } = require("../utils/auth");
 
@@ -44,17 +44,17 @@ const resolvers = {
     },
 
     checkout: async (parent, args, context) => {
+      console.log('checkout resolver called');
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ products: args.products });
       const line_items = [];
-
-      const { products } = await order.populate("products");
-
+      
+      const { products } = await order.populate('products');
       for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
-          flavor: products[i].flavor,
-          description: products[i].description,
-          images: [`${url}/images/${products[i].image}`],
+          name: products[i].flavor,
+          // description: products[i].description,
+          // images: [`${url}/images/${products[i].image}`],
         });
 
         const price = await stripe.prices.create({
