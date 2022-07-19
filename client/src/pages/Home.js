@@ -139,6 +139,8 @@ export default function Home() {
                   {" "}
                   just pure rich goodness.
                 </h6>
+
+
               </div>
               <div className="card-body">
                 <a className="card-link" style={styles.flavorites}>
