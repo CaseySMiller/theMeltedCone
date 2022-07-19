@@ -118,6 +118,7 @@ const Navbar = () => {
         )}
         <div style={styles.navbar} id="cart">
           <Button
+            // to="/"
             style={styles.navbar}
             // variant="primary"
             onClick={handleShow}
