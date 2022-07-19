@@ -1,8 +1,8 @@
 import React from "react";
 // import "../style.css";
-import Image from "../assets/images/main-pg-image.png";
 import { Link } from "react-router-dom";
-import ProductList from "../components/Products/ProductList";
+// import ProductList from "../components/Products/ProductList";
+import Image from "../assets/images/main-pg-image.png";
 import Image1 from "../assets/productimages/strawberry.jpg";
 import Image2 from "../assets/productimages/chocolate.jpg";
 import Image3 from "../assets/productimages/vanilla.jpg";
@@ -12,16 +12,19 @@ const styles = {
     backgroundColor: "#FFD6E8",
     backgroundImage: `url(${Image})`,
     backgroundRepeat: "no-repeat",
-    // textAlign: "center",
+    textAlign: "center",
+    // backgroundImage: "stretch",
+    backgroundSize: "30%",
     alignItems: "center",
+    backgroundPosition: "center",
   },
   cardContainer: {
     backgroundColor: "#FFD6E8",
   },
   img: {
     // position: "relative",
-    height: "35rem",
-    width: "35rem",
+    height: "20rem",
+    width: "20rem",
   },
   scoop: {
     height: "14rem",
@@ -48,12 +51,23 @@ const styles = {
     textAlign: "center",
   },
   card: {
-    maxWidth: "28rem",
+    maxWidth: "25rem",
+    minWidth: "25rem",
   },
 };
 export default function Home() {
   return (
     <div className="row p-5" style={styles.container}>
+      <div className="d-flex flex-column align-items-center">
+        {/* <img
+          src={Image}
+          id="main-img"
+          alt="main-img"
+          style={styles.img}
+          className="d-flex justify-content-center"
+        /> */}
+      </div>
+
       <div className="d-flex flex-column align-items-center">
         <h3 style={styles.quote} className="p-5 align-items-center">
           " No need to pick <span style={styles.span}>flavorites </span>when it
@@ -69,7 +83,7 @@ export default function Home() {
 
       <div>
         <div className="justify-content-between align-items-center">
-          <h1 style={styles.flavorites}> OUR FLAVORITES OF THE WEEK </h1>
+          <h1 style={styles.flavorites}> FEATURED FLAVORITES OF THE WEEK </h1>
         </div>
 
         <div className="justify-content-between align-items-center">
@@ -90,13 +104,12 @@ export default function Home() {
                     Strawberry
                   </h5>
                   <p className="card-text">
-                    Hit add to cart and enjoy this tasty treat in the comforts
-                    of your own home.
+                    Perfect summer flavor
                     <p>Easy peasy.</p>
                   </p>
                 </div>
                 <div className="card-body">
-                  <a className="card-link" style={styles.flavorites}>
+                  {/* <a className="card-link" style={styles.flavorites}>
                     {" "}
                     <Link
                       style={styles.btn}
@@ -106,7 +119,7 @@ export default function Home() {
                       {" "}
                       Add to Cart
                     </Link>{" "}
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>{" "}
@@ -126,24 +139,11 @@ export default function Home() {
                     Chocolate
                   </h5>
                   <p className="card-text">
-                    Hit add to cart and enjoy this tasty treat in the comforts
-                    of your own home.
+                    Rich, creamy goodness
                     <p>Easy peasy.</p>
                   </p>
                 </div>
-                <div className="card-body">
-                  <a className="card-link" style={styles.flavorites}>
-                    {" "}
-                    <Link
-                      style={styles.btn}
-                      to="/cart"
-                      className="btn-lg bg-white"
-                    >
-                      {" "}
-                      Add to Cart
-                    </Link>{" "}
-                  </a>
-                </div>
+                <div className="card-body"></div>
               </div>
             </div>{" "}
             <div className="d-flex flex-column my-5 p-5 col-lg-4 col-md-5 col-sm-6 align-items-center">
@@ -162,24 +162,11 @@ export default function Home() {
                     Vanilla
                   </h5>
                   <p className="card-text">
-                    Hit add to cart and enjoy this tasty treat in the comforts
-                    of your own home.
+                    Its a classic for a reason
                     <p>Easy peasy.</p>
                   </p>
                 </div>
-                <div className="card-body">
-                  <a className="card-link" style={styles.flavorites}>
-                    {" "}
-                    <Link
-                      style={styles.btn}
-                      to="/cart"
-                      className="btn-lg bg-white"
-                    >
-                      {" "}
-                      Add to Cart
-                    </Link>{" "}
-                  </a>
-                </div>
+                <div className="card-body"></div>
               </div>
             </div>{" "}
           </div>
