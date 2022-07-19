@@ -38,21 +38,9 @@
     "size": "single pint",
     "price": "7.99"
   },
-  {
+    {
     "flavor": "mango",
     "image": "mango.PNG",
-    "size": "single pint",
-    "price": "7.99"
-  },
-  {
-    "flavor": "Green Tea",
-    "image": "greentea.PNG",
-    "size": "single pint",
-    "price": "7.99"
-  },
-  {
-    "flavor": "Cookie Dough",
-    "image": "cookies.jpg",
     "size": "single pint",
     "price": "7.99"
   }
