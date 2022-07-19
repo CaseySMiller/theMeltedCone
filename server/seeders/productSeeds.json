@@ -3,15 +3,16 @@
     "flavor": "Chocolate",
     "toppings": "nuts",
     "sizes": "small",
-    
-    "price": "2.50",
-    "size": "small"
 
+    "price": "2.50",
+    "size": "small",
+    "image": "chocolate.jpg"
   },
   {
     "flavor": "Strawberry",
     "toppings": "sprinkles",
     "sizes": "medium",
+    "image": "strawberry.jpg",
 
     "price": "4.75",
     "size": "medium"
@@ -20,7 +21,7 @@
     "flavor": "Vanilla",
     "toppings": "fudge",
     "sizes": "large",
-
+    "image": "vanilla.jpg",
     "price": "7.25",
     "size": "large"
   }

@@ -55,7 +55,7 @@ function ProductList(item) {
           <ProductItem
             key={product._id}
             _id={product._id}
-            // image={product.image}
+            image={product.image}
             flavor={product.flavor}
             price={product.price}
             // quantity={product.quantity}

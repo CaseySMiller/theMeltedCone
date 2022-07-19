@@ -15,6 +15,10 @@ const styles = {
     fontDisplay: "sans-serif",
     textAlign: "center",
   },
+  scoop: {
+    height: "14rem",
+    width: "15rem",
+  },
 };
 
 function ProductItem(item) {
@@ -24,7 +28,7 @@ function ProductItem(item) {
     flavor,
     _id,
     price,
-    // image,
+    image,
     // quantity
   } = item;
 
@@ -51,6 +55,8 @@ function ProductItem(item) {
     }
   };
 
+  const productImage = "../../assets/productimages/chocolate.jpg";
+
   return (
     <div className="row p-2 justify-content-around">
       <div className="d-flex flex-column my-3 col-xl-3 col-lg-4 col-md-5 col-sm-6">
@@ -58,7 +64,16 @@ function ProductItem(item) {
           style={styles.card}
           className="card align-items-center text-center p-3"
         >
-          <img style={styles.scoop} src={Image} className="card-img-top" />
+          {productImage ? (
+            <img
+              style={styles.scoop}
+              className="card-img-top"
+              src={productImage}
+            />
+          ) : (
+            <img style={styles.scoop} className="card-img-top" src={Image} />
+          )}
+
           <div className="card-body">
             <Link to={`/products/${_id}`}>
               <h5 className="card-title" style={styles.flavorites}>

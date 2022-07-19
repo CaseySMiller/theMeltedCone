@@ -1,6 +1,6 @@
 import React from "react";
 import "../style.css";
-import Image from "../assets/images/scoop.png";
+import Image from "../assets/productimages/blackberry.jpg";
 import { Link } from "react-router-dom";
 
 const styles = {
