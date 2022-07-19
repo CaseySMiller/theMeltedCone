@@ -1,15 +1,11 @@
 import React, { useEffect } from "react";
-// import ProductItem from "../Products/ProductItem";
+import ProductItem from "../Products/ProductItem";
 import { useStoreContext } from "../../utils/GlobalState";
 // import { UPDATE_PRODUCTS } from "../../utils/actions";
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_PRODUCTS } from "../../utils/queries";
-import Image from "../../assets/images/scoop.png";
-import { Link } from "react-router-dom";
-import cartImg from "../../assets/images/add-cart.png";
-import { idbPromise } from "../../utils/helpers";
+// import { idbPromise } from "../../utils/helpers";
 
 const styles = {
   scoop: {
@@ -44,27 +40,6 @@ function ProductList(item) {
 
   const products = data?.products || [];
 
-  console.log(products);
-  const addToCart = () => {
-    const itemInCart = cart.find((cartItem) => cartItem._id === _id);
-    if (itemInCart) {
-      dispatch({
-        type: UPDATE_CART_QUANTITY,
-        _id: _id,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
-      });
-      idbPromise("cart", "put", {
-        ...itemInCart,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
-      });
-    } else {
-      dispatch({
-        type: ADD_TO_CART,
-        product: { ...item, purchaseQuantity: 1 },
-      });
-      idbPromise("cart", "put", { ...item, purchaseQuantity: 1 });
-    }
-  };
   return (
     <div className="my-2">
       <h2></h2>
@@ -77,35 +52,14 @@ function ProductList(item) {
         </div>
       ) : (
         products.map((product) => (
-          <div className="row p-2 justify-content-around">
-            <div className="d-flex flex-column my-3 col-xl-3 col-lg-4 col-md-5 col-sm-6">
-              <div
-                style={styles.card}
-                className="card align-items-center text-center p-3"
-              >
-                <img
-                  style={styles.scoop}
-                  src={Image}
-                  className="card-img-top"
-                />
-                <div className="card-body">
-                  <Link to={`/products/${product._id}`}>
-                    <h5 className="card-title" style={styles.flavorites}>
-                      {product.flavor}
-                    </h5>
-                  </Link>
-                  <span>${product.price}</span>
-                </div>
-
-                <button
-                  onClick={addToCart}
-                  style={styles.img}
-                  src={cartImg}
-                  className="btn bg-secondary"
-                ></button>
-              </div>
-            </div>
-          </div>
+          <ProductItem
+            key={product._id}
+            _id={product._id}
+            // image={product.image}
+            flavor={product.flavor}
+            price={product.price}
+            // quantity={product.quantity}
+          />
         ))
       )}
     </div>

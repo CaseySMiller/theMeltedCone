@@ -1,11 +1,9 @@
-// this is all copied from the stripe example we will need to refactor it to work in our codebase
-// ------------------------------------------------------------------------------------------
 import React, { useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { useLazyQuery } from "@apollo/client";
 import { QUERY_CHECKOUT } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
-import CartItem from "./CartItem"; // add this
+import CartItem from "./CartItem"; 
 import Auth from "../../utils/auth";
 import { useStoreContext } from "../../utils/GlobalState";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
@@ -34,6 +32,7 @@ const Cart = () => {
   useEffect(() => {
     async function getCart() {
       const cart = await idbPromise("cart", "get");
+      console.log(cart);
       dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
     }
 
@@ -88,7 +87,9 @@ const Cart = () => {
       <h2>Shopping Cart</h2>
       {state.cart && state.cart.length > 0 ? (
         <div>
+          {console.log(state)}
           {state.cart.map((item) => (
+            
             <CartItem key={item._id} item={item} />
           ))}
 
