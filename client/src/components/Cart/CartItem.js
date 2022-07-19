@@ -43,10 +43,10 @@ const CartItem = ({ item }) => {
       </div> */}
       <div>
         <div>
-          {item.flavor}, ${item.price}
+          {item.flavor}: (${item.price})
         </div>
         <div>
-          <span>Qty:</span>
+          <span>Qty: </span>
           <input
             type="number"
             placeholder="1"

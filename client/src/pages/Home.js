@@ -42,13 +42,19 @@ const styles = {
     textAlign: "center",
   },
   card: {
-    maxWidth: "25rem",
-    minWidth: "25rem",
+    maxWidth: "40rem",
+    minWidth: "20rem",
   },
   details: {
     fontFamily: "Syncopate",
     fontDisplay: "sans-serif",
     color: "rgb(69,69,69)",
+  },
+  cartBtn: {
+    color: "#f9a6ca",
+    fontFamily: "Syncopate",
+    fontDisplay: "sans-serif",
+    textAlign: "center",
   },
 };
 export default function Home() {
@@ -72,13 +78,13 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <div className="justify-content-between align-items-center">
+        <div className="justify-content-between align-items-center p-3">
           <h2 style={styles.flavorites}> featured flavorites of the week </h2>
         </div>
         {/* CARDS */}
-        <div className="row align-items-center">
+        <div className="row align-items-center justify-content-between p-2">
           {/* CARD 1 */}
-          <div className="d-flex flex-column my-5 col-lg-4 col-md-5 col-sm-6 align-items-center">
+          <div className="d-flex flex-column my-5 p-5 col-lg-4 col-md-5 col-sm-6 align-items-center">
             <div
               style={styles.card}
               className="card align-items-center text-center"
@@ -106,9 +112,9 @@ export default function Home() {
                 <a className="card-link" style={styles.flavorites}>
                   {" "}
                   <Link
-                    style={styles.details}
+                    style={styles.cartBtn}
+                    className="btn btn-outline-secondary"
                     to="/order"
-                    className="btn bg-white"
                   >
                     {" "}
                     Browse our freezer
@@ -117,7 +123,8 @@ export default function Home() {
               </div>
             </div>
           </div>{" "}
-          <div className="d-flex flex-column my-5 p-0 col-lg-4 col-md-5 col-sm-6 align-items-center">
+          {/* CARD 2 */}
+          <div className="d-flex flex-column my-5 p-5 col-lg-4 col-md-5 col-sm-6 align-items-center">
             <div
               style={styles.card}
               className="card align-items-center text-center"
@@ -145,9 +152,9 @@ export default function Home() {
                 <a className="card-link" style={styles.flavorites}>
                   {" "}
                   <Link
-                    style={styles.details}
+                    style={styles.cartBtn}
+                    className="btn btn-outline-secondary"
                     to="/order"
-                    className="btn bg-white"
                   >
                     {" "}
                     Browse our freezer
@@ -156,7 +163,8 @@ export default function Home() {
               </div>
             </div>
           </div>{" "}
-          <div className="d-flex flex-column my-5 p-0 col-lg-4 col-md-5 col-sm-6 align-items-center">
+          {/* CARD 3 */}
+          <div className="d-flex flex-column my-5 p-5 col-lg-4 col-md-5 col-sm-6 align-items-center">
             <div
               style={styles.card}
               className="card align-items-center text-center"
@@ -184,9 +192,9 @@ export default function Home() {
                 <a className="card-link" style={styles.flavorites}>
                   {" "}
                   <Link
-                    style={styles.details}
+                    style={styles.cartBtn}
+                    className="btn btn-outline-secondary"
                     to="/order"
-                    className="btn bg-white"
                   >
                     {" "}
                     Browse our freezer
