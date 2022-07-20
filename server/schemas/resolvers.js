@@ -19,9 +19,10 @@ const resolvers = {
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: "orders.products",
-          populate: "category",
+          path: "orders",
+          populate: { path: 'products' },
         });
+        // console.log(user.orders[0].products);
 
         user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
 
