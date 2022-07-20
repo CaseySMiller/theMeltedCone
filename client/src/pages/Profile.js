@@ -10,20 +10,14 @@ const styles = {
     backgroundColor: "#FFD6E8",
   },
   quote: {
-    color: "white",
+    color: "black",
     fontFamily: "Syncopate",
     fontDisplay: "sans-serif",
     textAlign: "center",
   },
   scoop: {
-    height: "14rem",
-    width: "15rem",
-  },
-  quote: {
-    color: "white",
-    fontFamily: "Syncopate",
-    fontDisplay: "sans-serif",
-    textAlign: "center",
+    height: "2rem",
+    width: "2rem",
   },
   card: {
     maxWidth: "28rem",
@@ -44,7 +38,7 @@ export default function Profile() {
   if (data) {
     user = data.user;
   }
-
+console.log(user)
   return (
     <>
       <div className="container my-1">
@@ -53,30 +47,32 @@ export default function Profile() {
             <h2 style={styles.flavorites}>
               {user.firstName}'s PREVIOUS ORDERS
             </h2>
-            {user.orders.map((order) => (
-              <div key={order._id} className="my-2">
-                <h3>
-                  {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
-                </h3>
-                <div className="flex-row" style={styles.quote}>
-                  {order.products.map(({ _id, image, name, price }, index) => (
-                    <div
-                      key={index}
-                      className="card px-1 py-1"
-                      style={styles.quote}
-                    >
-                      <Link to={`/products/${_id}`}>
-                        <img alt={name} src={`/images/${image}`} />
-                        <p>{name}</p>
-                      </Link>
-                      <div>
-                        <span>${price}</span>
+            <div className="row p-2 justify-content-around">
+              {user.orders.map((order) => (
+                <div key={order._id} className="my-2">
+                  <h3>
+                    {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
+                  </h3>
+                  <div className="flex-row" style={styles.quote}>
+                    {order.products.map(({ _id, image, flavor, price }, index) => (
+                      <div
+                        key={index}
+                        className="md-3 px-1 py-1"
+                        style={styles.quote}
+                      >
+                        <Link to={`/products/${_id}`}>
+                          <img style={styles.scoop} alt={flavor} src={`/assets/productimages/${image}`} />
+                          <p>{flavor}</p>
+                        </Link>
+                        <div>
+                          <span>${price}</span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </>
         ) : null}
       </div>
