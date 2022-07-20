@@ -127,7 +127,7 @@ export default function Home() {
             >
               <img
                 style={styles.scoop}
-                src="/assets/productimages/Chocolate.jpg"
+                src="/assets/productimages/chocolate.jpg"
                 className="card-img-top"
               />
               <div className="card-body">
